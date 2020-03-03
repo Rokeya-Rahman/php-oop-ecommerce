@@ -2,6 +2,7 @@
 
     require_once 'vendor/autoload.php';
     use App\classes\Product;
+    use App\classes\SubImage;
 
     $product = new Product();
     $categories = $product->selectCategoryInfo();
@@ -22,6 +23,7 @@
         $productLongDescription     =   $_POST['product_long_description'];
         $productImage               =   $_FILES['product_image'];
         $productImage2              =   $_FILES['product_image2'];
+        $productImage3              =   $_FILES['product_image3'];
         $publicationStatus          =   $_POST['publication_status'];
 
         if ($categoryId == 0)
@@ -114,6 +116,28 @@
         {
             $error++;
             $productImage2Error = 'Product image must be required';
+        }
+
+        if ($productImage3['name'] != '')
+        {
+            if ($productImage3['tmp_name'] != '')
+            {
+                if ($productImage3['size'] > (2 * 1024 * 1024))
+                {
+                    $error++;
+                    $productImage3Error = 'Your image size is too large, please select with in 2 MB';
+                }
+            }
+            else
+            {
+                $error++;
+                $productImage3Error = 'Invalid Image ! Please choose a valid image';
+            }
+        }
+        else
+        {
+            $error++;
+            $productImage3Error = 'Product image must be required';
         }
 
         if ($publicationStatus == 0)
@@ -260,6 +284,15 @@
                             <input type="file" name="product_image2" accept="image/*" class="span6 typeahead">
                             <span style="font-weight: bold; color: red;">
                                 <?php if (isset($productImage2Error)) { print $productImage2Error; } ?>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Product Image 3</label>
+                        <div class="controls">
+                            <input type="file" name="product_image3" accept="image/*" class="span6 typeahead">
+                            <span style="font-weight: bold; color: red;">
+                                <?php if (isset($productImage3Error)) { print $productImage3Error; } ?>
                             </span>
                         </div>
                     </div>

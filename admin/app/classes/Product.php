@@ -55,9 +55,25 @@ class Product extends Category
         $extension              =   pathinfo($imageName, PATHINFO_EXTENSION);
         $uniqueSaveName         =   time().uniqid(rand()).'.'."$extension";
         $productImageUrl        =   $imagePath.$fileName.'-'.$uniqueSaveName;
-        $tmpFileName               =   $_FILES["product_image"]["tmp_name"];
+        $tmpFileName            =   $_FILES["product_image"]["tmp_name"];
         //list($width, $height)   = getimagesize( $filename );
         move_uploaded_file($tmpFileName,  $productImageUrl);
+
+        $imageName2              =   $_FILES['product_image2']['name'];
+        $fileName2               =   pathinfo($imageName2, PATHINFO_FILENAME);
+        $extension2              =   pathinfo($imageName2, PATHINFO_EXTENSION);
+        $uniqueSaveName2         =   time().uniqid(rand()).'.'."$extension2";
+        $productImageUrl2        =   $imagePath.$fileName2.'-'.$uniqueSaveName2;
+        $tmpFileName2            =   $_FILES["product_image2"]["tmp_name"];
+        move_uploaded_file($tmpFileName2,  $productImageUrl2);
+
+        $imageName3              =   $_FILES['product_image3']['name'];
+        $fileName3               =   pathinfo($imageName3, PATHINFO_FILENAME);
+        $extension3              =   pathinfo($imageName3, PATHINFO_EXTENSION);
+        $uniqueSaveName3         =   time().uniqid(rand()).'.'."$extension3";
+        $productImageUrl3        =   $imagePath.$fileName3.'-'.$uniqueSaveName3;
+        $tmpFileName3            =   $_FILES["product_image3"]["tmp_name"];
+        move_uploaded_file($tmpFileName3,  $productImageUrl3);
 
 
 //        if ($_FILES['product_image']['tmp_name'] != '')
@@ -100,7 +116,7 @@ class Product extends Category
 //        }
 
         $link   =   $this->__construct();
-        $sql    =   "INSERT INTO products (category_id, product_name, product_code, product_price, product_quantity, product_color, product_short_description, product_long_description, product_image, publication_status, create_date) VALUES ('$categoryId', '".mysqli_real_escape_string($link, $productName)."', '".mysqli_real_escape_string($link, $productCode)."', '".mysqli_real_escape_string($link, $productPrice)."', '".mysqli_real_escape_string($link, $productQuantity)."', '".mysqli_real_escape_string($link, $productColor)."', '".mysqli_real_escape_string($link, $productShortDescription)."', '".mysqli_real_escape_string($link, $productLongDescription)."', '$productImageUrl', '$publicationStatus', '".date("Y-m-d h:i:sa")."' ) ";
+        $sql    =   "INSERT INTO products (category_id, product_name, product_code, product_price, product_quantity, product_color, product_short_description, product_long_description, product_image, product_image2, product_image3, publication_status, create_date) VALUES ('$categoryId', '".mysqli_real_escape_string($link, $productName)."', '".mysqli_real_escape_string($link, $productCode)."', '".mysqli_real_escape_string($link, $productPrice)."', '".mysqli_real_escape_string($link, $productQuantity)."', '".mysqli_real_escape_string($link, $productColor)."', '".mysqli_real_escape_string($link, $productShortDescription)."', '".mysqli_real_escape_string($link, $productLongDescription)."', '$productImageUrl', '$productImageUrl2', '$productImageUrl3', '$publicationStatus', '".date("Y-m-d h:i:sa")."' ) ";
 
         if (mysqli_query($link, $sql))
         {
@@ -111,5 +127,13 @@ class Product extends Category
         {
             die ('Query Problem.'.mysqli_error($link));
         }
+    }
+
+    public function selectProductInfo()
+    {
+        $link   =   $this->__construct();
+        $sql    =   "SELECT * FROM products LEFT JOIN categories ON products.category_id = categories.id";
+        $query  =   mysqli_query($link, $sql);
+        return $query;
     }
 }

@@ -8,6 +8,8 @@
     $result = $category->getCategoryInfoById($categoryEditId);
     $categoryIdInfo = mysqli_fetch_assoc($result);
 
+    date_default_timezone_set('Asia/Dhaka');
+
     $error = '';
 
     if (isset($_POST['btn']))

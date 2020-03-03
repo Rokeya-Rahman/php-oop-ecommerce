@@ -22,7 +22,7 @@ class Category
         $publicationStatus      =   $_POST['publication_status'];
 
         $link = $this->__construct();
-        $sql  = "INSERT INTO categories (category_name, category_description, publication_status) VALUES ('".mysqli_real_escape_string($link, $categoryName)."', '".mysqli_real_escape_string($link, $categoryDescription)."', '$publicationStatus')";
+        $sql  = "INSERT INTO categories (category_name, category_description, publication_status, create_date) VALUES ('".mysqli_real_escape_string($link, $categoryName)."', '".mysqli_real_escape_string($link, $categoryDescription)."', '$publicationStatus', '".date("Y-m-d h:i:sa")."')";
         if (mysqli_query($link, $sql))
         {
             $message = 'Category information save successfully';
@@ -62,7 +62,7 @@ class Category
         $publicationStatus      =   $_POST['publication_status'];
 
         $link   =   $this->__construct();
-        $sql    =   "UPDATE categories SET category_name = '".mysqli_real_escape_string($link, $categoryName)."', category_description = '".mysqli_real_escape_string($link, $categoryDescription)."', publication_status = '$publicationStatus' WHERE id = '$categoryId' ";
+        $sql    =   "UPDATE categories SET category_name = '".mysqli_real_escape_string($link, $categoryName)."', category_description = '".mysqli_real_escape_string($link, $categoryDescription)."', publication_status = '$publicationStatus', update_date = '".date("Y-m-d h:i:sa")."' WHERE id = '$categoryId'";
 
         if (mysqli_query($link, $sql))
         {
