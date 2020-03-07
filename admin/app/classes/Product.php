@@ -18,7 +18,7 @@ class Product extends Category
     public function selectCategoryInfo()
     {
         $link   =   $this->__construct();
-        $sql    =   "SELECT id, category_name FROM categories";
+        $sql    =   "SELECT category_id, category_name FROM categories";
         if (mysqli_query($link, $sql))
         {
             $query = mysqli_query($link, $sql);
@@ -32,7 +32,7 @@ class Product extends Category
 
     public function saveProduct()
     {
-        $categoryId                 =   $_POST['category_id'];
+        $productCategoryId          =   $_POST['product_category_id'];
         $productName                =   $_POST['product_name'];
         $productCode                =   $_POST['product_code'];
         $productPrice               =   $_POST['product_price'];
@@ -40,7 +40,7 @@ class Product extends Category
         $productColor               =   $_POST['product_color'];
         $productShortDescription    =   $_POST['product_short_description'];
         $productLongDescription     =   $_POST['product_long_description'];
-        $publicationStatus          =   $_POST['publication_status'];
+        $productPublicationStatus   =   $_POST['product_publication_status'];
 
 //        $imageDirectory     =   'assets/product-images/';
 //        $imageName          =   $_FILES['product_image']['name'];
@@ -116,7 +116,7 @@ class Product extends Category
 //        }
 
         $link   =   $this->__construct();
-        $sql    =   "INSERT INTO products (category_id, product_name, product_code, product_price, product_quantity, product_color, product_short_description, product_long_description, product_image, product_image2, product_image3, publication_status, create_date) VALUES ('$categoryId', '".mysqli_real_escape_string($link, $productName)."', '".mysqli_real_escape_string($link, $productCode)."', '".mysqli_real_escape_string($link, $productPrice)."', '".mysqli_real_escape_string($link, $productQuantity)."', '".mysqli_real_escape_string($link, $productColor)."', '".mysqli_real_escape_string($link, $productShortDescription)."', '".mysqli_real_escape_string($link, $productLongDescription)."', '$productImageUrl', '$productImageUrl2', '$productImageUrl3', '$publicationStatus', '".date("Y-m-d h:i:sa")."' ) ";
+        $sql    =   "INSERT INTO products (product_category_id, product_name, product_code, product_price, product_quantity, product_color, product_short_description, product_long_description, product_image, product_image2, product_image3, product_publication_status, product_create_date) VALUES ('$productCategoryId', '".mysqli_real_escape_string($link, $productName)."', '".mysqli_real_escape_string($link, $productCode)."', '".mysqli_real_escape_string($link, $productPrice)."', '".mysqli_real_escape_string($link, $productQuantity)."', '".mysqli_real_escape_string($link, $productColor)."', '".mysqli_real_escape_string($link, $productShortDescription)."', '".mysqli_real_escape_string($link, $productLongDescription)."', '$productImageUrl', '$productImageUrl2', '$productImageUrl3', '$productPublicationStatus', '".date("Y-m-d h:i:sa")."' ) ";
 
         if (mysqli_query($link, $sql))
         {
@@ -132,7 +132,23 @@ class Product extends Category
     public function selectProductInfo()
     {
         $link   =   $this->__construct();
-        $sql    =   "SELECT * FROM products LEFT JOIN categories ON products.category_id = categories.id";
+        $sql    =   "SELECT * FROM products LEFT JOIN categories ON products.product_category_id = categories.category_id";
+        $query  =   mysqli_query($link, $sql);
+        return $query;
+    }
+
+    //public function viewProductInfoById($productViewId)
+    //{
+        //$link   =   $this->__construct();
+        //$sql    =   "SELECT * FROM products LEFT JOIN categories ON products.category_id = categories.category_id WHERE product_id = '$productViewId' ";
+        //$query  =   mysqli_query($link, $sql);
+        //return $query;
+    //}
+
+    public function getProductInfoById($editProductId)
+    {
+        $link   =   $this->__construct();
+        $sql    =   "SELECT * FROM products WHERE product_id = '$editProductId' ";
         $query  =   mysqli_query($link, $sql);
         return $query;
     }

@@ -9,9 +9,9 @@
 
     if (isset($_POST['btn']))
     {
-        $categoryName           =   $_POST['category_name'];
-        $categoryDescription    =   $_POST['category_description'];
-        $publicationStatus      =   $_POST['publication_status'];
+        $categoryName               =   $_POST['category_name'];
+        $categoryDescription        =   $_POST['category_description'];
+        $categoryPublicationStatus  =   $_POST['category_publication_status'];
 
         if ($categoryName == '')
         {
@@ -23,19 +23,19 @@
             $error++;
             $categoryDescriptionError = 'Category description must be required';
         }
-        if ($publicationStatus == 0)
+        if ($categoryPublicationStatus == 0)
         {
             $error++;
-            $publicationStatusError = 'Publication status must be required';
+            $categoryPublicationStatusError = 'Publication status must be required';
         }
 
         if ($error == 0)
         {
             $category = new Category();
             $message = $category->saveCategory();
-            $categoryName           =   '';
-            $categoryDescription    =   '';
-            $publicationStatus      =   '';
+            $categoryName               =   '';
+            $categoryDescription        =   '';
+            $categoryPublicationStatus  =   '';
         }
     }
 
@@ -89,15 +89,15 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label">Publication Status</label>
+                        <label class="control-label">Category Publication Status</label>
                         <div class="controls">
-                            <select name="publication_status">
+                            <select name="category_publication_status">
                                 <option>--- Select Publication Status ---</option>
 
-                                <?php if ($publicationStatus == 1) { ?>
+                                <?php if ($categoryPublicationStatus == 1) { ?>
                                     <option value="1" selected>Published</option>
                                     <option value="2">Unpublished</option>
-                                <?php } elseif ($publicationStatus == 2) { ?>
+                                <?php } elseif ($categoryPublicationStatus == 2) { ?>
                                     <option value="1">Published</option>
                                     <option value="2" selected>Unpublished</option>
                                 <?php } else { ?>
@@ -106,7 +106,7 @@
                                 <?php } ?>
 
                             </select>
-                            <span style="font-weight: bold; color: red;"><?php if (isset($publicationStatusError)) { print $publicationStatusError; } ?></span>
+                            <span style="font-weight: bold; color: red;"><?php if (isset($categoryPublicationStatusError)) { print $categoryPublicationStatusError; } ?></span>
                         </div>
                     </div>
                     <div class="form-actions">

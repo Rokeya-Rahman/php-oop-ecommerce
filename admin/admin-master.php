@@ -114,11 +114,15 @@
                                 include './pages/manage-product-content.php';
                             }
 
+                            /*if ($pages = 'view-product-content')
+                            {
+                                include './pages/view-product-content.php';
+                            }*/
+
                             if ($pages == 'edit-product-content')
                             {
                                 include './pages/edit-product-content.php';
                             }
-
                         }
                         else
                         {

@@ -60,7 +60,7 @@
 <div class="row-fluid sortable">
     <div class="box span12">
         <div class="box-header" data-original-title>
-            <h2><i class="halflings-icon user"></i><span class="break"></span>Category View</h2>
+            <h2><i class="halflings-icon user"></i><span class="break"></span>Category Manage</h2>
         </div>
         <div class="box-content">
             <table class="table table-striped table-bordered bootstrap-datatable datatable">
@@ -69,7 +69,7 @@
                     <th>Serial No.</th>
                     <th>Category Name</th>
                     <th>Category Description</th>
-                    <th>Publication Status</th>
+                    <th>Category Publication Status</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -83,11 +83,11 @@
 
                         <td class="center">
                             <?php
-                                if ($category['publication_status'] == 1)
+                                if ($category['category_publication_status'] == 1)
                                 {
                                     print '<span class="label label-success">Published</span>';
                                 }
-                                else
+                                elseif ($category['category_publication_status'] == 2)
                                 {
                                     print '<span class="label label-warning">Unpublished</span>';
                                 }
@@ -97,10 +97,10 @@
 <!--                            <a class="btn btn-success" href="#">-->
 <!--                                <i class="halflings-icon white zoom-in"></i>-->
 <!--                            </a>-->
-                            <a class="btn btn-info" href="edit-category.php?category_id=<?php print $category['id']; ?>">
+                            <a class="btn btn-info" href="edit-category.php?category_id=<?php print $category['category_id']; ?>">
                                 <i class="halflings-icon white edit"></i>
                             </a>
-                            <a class="btn btn-danger" href="?p_status=delete&category_id=<?php print $category['id']; ?>" onclick="return confirm('Are you sure to delete this category information !!!')">
+                            <a class="btn btn-danger" href="?p_status=delete&category_id=<?php print $category['category_id']; ?>" onclick="return confirm('Are you sure to delete this category information !!!')">
                                 <i class="halflings-icon white trash"></i>
                             </a>
                         </td>

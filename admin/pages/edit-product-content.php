@@ -2,165 +2,123 @@
 
     require_once 'vendor/autoload.php';
     use App\classes\Product;
-    use App\classes\SubImage;
 
+    $editProductId = $_GET['product_id'];
     $product = new Product();
+    $query = $product->getProductInfoById($editProductId);
+    $productIdInfo = mysqli_fetch_assoc($query);
+
     $categories = $product->selectCategoryInfo();
 
     date_default_timezone_set('Asia/Dhaka');
 
     $error = 0;
 
-    if (isset($_POST['btn']))
-    {
-        $productCategoryId          =   $_POST['product_category_id'];
-        $productName                =   $_POST['product_name'];
-        $productCode                =   $_POST['product_code'];
-        $productPrice               =   $_POST['product_price'];
-        $productQuantity            =   $_POST['product_quantity'];
-        $productColor               =   $_POST['product_color'];
-        $productShortDescription    =   $_POST['product_short_description'];
-        $productLongDescription     =   $_POST['product_long_description'];
-        $productImage               =   $_FILES['product_image'];
-        $productImage2              =   $_FILES['product_image2'];
-        $productImage3              =   $_FILES['product_image3'];
-        $productPublicationStatus   =   $_POST['product_publication_status'];
+    if (isset($_POST['btn'])) {
+        $categoryId = $_POST['product_category_id'];
+        $productName = $_POST['product_name'];
+        $productCode = $_POST['product_code'];
+        $productPrice = $_POST['product_price'];
+        $productQuantity = $_POST['product_quantity'];
+        $productColor = $_POST['product_color'];
+        $productShortDescription = $_POST['product_short_description'];
+        $productLongDescription = $_POST['product_long_description'];
+        $productImage = $_FILES['product_image'];
+        $productImage2 = $_FILES['product_image2'];
+        $productImage3 = $_FILES['product_image3'];
+        $productPublicationStatus = $_POST['product_publication_status'];
 
-        if ($productCategoryId == 0)
-        {
+        if ($categoryId == 0) {
             $error++;
-            $productCategoryIdError = 'Category name must be required';
+            $categoryIdError = 'Category name must be required';
         }
 
-        if ($productName == '')
-        {
+        if ($productName == '') {
             $error++;
             $productNameError = 'Product name must be required';
         }
 
-        if ($productCode == '')
-        {
+        if ($productCode == '') {
             $error++;
             $productCodeError = 'Product code must be required';
         }
 
-        if ($productPrice == '')
-        {
+        if ($productPrice == '') {
             $error++;
             $productPriceError = 'Product price must be required';
         }
 
-        if ($productQuantity == '')
-        {
+        if ($productQuantity == '') {
             $error++;
             $productQuantityError = 'Product quantity must be required';
         }
 
-        if ($productColor == '')
-        {
+        if ($productColor == '') {
             $error++;
             $productColorError = 'Product color must be required';
         }
 
-        if ($productShortDescription == '')
-        {
+        if ($productShortDescription == '') {
             $error++;
             $productShortDescriptionError = 'Product short description must be required';
         }
 
-        if ($productLongDescription == '')
-        {
+        if ($productLongDescription == '') {
             $error++;
             $productLongDescriptionError = 'Product long description must be required';
         }
 
-        if ($productImage['name'] != '')
-        {
-            if ($productImage['tmp_name'] != '')
-            {
-                if ($productImage['size'] > (2 * 1024 * 1024))
-                {
+        if ($productImage['name'] != '') {
+            if ($productImage['tmp_name'] != '') {
+                if ($productImage['size'] > (2 * 1024 * 1024)) {
                     $error++;
                     $productImageError = 'Your image size is too large, please select with in 2 MB';
                 }
-            }
-            else
-            {
+            } else {
                 $error++;
                 $productImageError = 'Invalid Image ! Please choose a valid image';
             }
-        }
-        else
-        {
+        } else {
             $error++;
             $productImageError = 'Product image must be required';
         }
 
-        if ($productImage2['name'] != '')
-        {
-            if ($productImage2['tmp_name'] != '')
-            {
-                if ($productImage2['size'] > (2 * 1024 * 1024))
-                {
+        if ($productImage2['name'] != '') {
+            if ($productImage2['tmp_name'] != '') {
+                if ($productImage2['size'] > (2 * 1024 * 1024)) {
                     $error++;
                     $productImage2Error = 'Your image size is too large, please select with in 2 MB';
                 }
-            }
-            else
-            {
+            } else {
                 $error++;
                 $productImage2Error = 'Invalid Image ! Please choose a valid image';
             }
-        }
-        else
-        {
+        } else {
             $error++;
             $productImage2Error = 'Product image must be required';
         }
 
-        if ($productImage3['name'] != '')
-        {
-            if ($productImage3['tmp_name'] != '')
-            {
-                if ($productImage3['size'] > (2 * 1024 * 1024))
-                {
+        if ($productImage3['name'] != '') {
+            if ($productImage3['tmp_name'] != '') {
+                if ($productImage3['size'] > (2 * 1024 * 1024)) {
                     $error++;
                     $productImage3Error = 'Your image size is too large, please select with in 2 MB';
                 }
-            }
-            else
-            {
+            } else {
                 $error++;
                 $productImage3Error = 'Invalid Image ! Please choose a valid image';
             }
-        }
-        else
-        {
+        } else {
             $error++;
             $productImage3Error = 'Product image must be required';
         }
 
-        if ($productPublicationStatus == 0)
-        {
+        if ($productPublicationStatus == 0) {
             $error++;
             $productPublicationStatusError = 'Publication status must be required';
         }
-
-        if ($error == 0)
-        {
-            $message = $product->saveProduct();
-            $productCategoryId          =   '';
-            $productName                =   '';
-            $productCode                =   '';
-            $productPrice               =   '';
-            $productQuantity            =   '';
-            $productColor               =   '';
-            $productShortDescription    =   '';
-            $productLongDescription     =   '';
-            $productImage               =   '';
-            $productPublicationStatus   =   '';
-        }
     }
+
 
 ?>
 
@@ -174,14 +132,14 @@
     </li>
     <li>
         <i class="icon-edit"></i>
-        <a href="#">Add Product</a>
+        <a href="#">Edit Product</a>
     </li>
 </ul>
 
 <div class="row-fluid sortable">
     <div class="box span12">
         <div class="box-header" data-original-title>
-            <h2><i class="halflings-icon edit"></i><span class="break"></span>Add product</h2>
+            <h2><i class="halflings-icon edit"></i><span class="break"></span>Edit product</h2>
         </div>
         <div class="box-content">
 
@@ -204,7 +162,7 @@
 
                                 <?php while ($category = mysqli_fetch_assoc($categories)) { ?>
 
-                                    <?php if ($productCategoryId == $category['category_id']) { ?>
+                                    <?php if ($productIdInfo['product_category_id'] == $category['category_id']) { ?>
 
                                         <option value="<?php print $category['category_id']; ?>" selected><?php print $category['category_name']; ?></option>
 
@@ -217,55 +175,55 @@
                                 <?php } ?>
 
                             </select>
-                            <span style="font-weight: bold; color: red;"><?php if (isset($productCategoryIdError)) { print $productCategoryIdError; } ?></span>
+                            <span style="font-weight: bold; color: red;"><?php if (isset($categoryIdError)) { print $categoryIdError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Product Name</label>
                         <div class="controls">
-                            <input type="text" name="product_name" class="span6 typeahead" value="<?php if (isset($productName)) { print $productName; } ?>">
+                            <input type="text" name="product_name" class="span6 typeahead" value="<?php print $productIdInfo['product_name']; ?>">
                             <span style="font-weight: bold; color: red;"><?php if (isset($productNameError)) { print $productNameError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Product Code</label>
                         <div class="controls">
-                            <input type="text" name="product_code" class="span6 typeahead" value="<?php if (isset($productCode)) { print $productCode; } ?>">
+                            <input type="text" name="product_code" class="span6 typeahead" value="<?php print $productIdInfo['product_code']; ?>">
                             <span style="font-weight: bold; color: red;"><?php if (isset($productCodeError)) { print $productCodeError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Product Price</label>
                         <div class="controls">
-                            <input type="text" name="product_price" class="span6 typeahead" value="<?php if (isset($productPrice)) { print $productPrice; } ?>">
+                            <input type="text" name="product_price" class="span6 typeahead" value="<?php print $productIdInfo['product_price']; ?>">
                             <span style="font-weight: bold; color: red;"><?php if (isset($productPriceError)) { print $productPriceError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Product Quantity</label>
                         <div class="controls">
-                            <input type="text" name="product_quantity" class="span6 typeahead" value="<?php if (isset($productQuantity)) { print $productQuantity; } ?>">
+                            <input type="text" name="product_quantity" class="span6 typeahead" value="<?php print $productIdInfo['product_quantity']; ?>">
                             <span style="font-weight: bold; color: red;"><?php if (isset($productQuantityError)) { print $productQuantityError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Product Color</label>
                         <div class="controls">
-                            <input type="text" name="product_color" class="span6 typeahead" value="<?php if (isset($productColor)) { print $productColor; } ?>">
+                            <input type="text" name="product_color" class="span6 typeahead" value="<?php print $productIdInfo['product_color']; ?>">
                             <span style="font-weight: bold; color: red;"><?php if (isset($productColorError)) { print $productColorError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Product Short Description</label>
                         <div class="controls">
-                            <textarea name="product_short_description" rows="3" class="span6 typeahead"><?php if (isset($productShortDescription)) { print $productShortDescription; } ?></textarea>
+                            <textarea name="product_short_description" rows="3" class="span6 typeahead"><?php print $productIdInfo['product_short_description']; ?></textarea>
                             <span style="font-weight: bold; color: red;"><?php if (isset($productShortDescriptionError)) { print $productShortDescriptionError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Product Long Description</label>
                         <div class="controls">
-                            <textarea name="product_long_description" class="cleditor"><?php if (isset($productLongDescription)) { print $productLongDescription; } ?></textarea>
+                            <textarea name="product_long_description" class="cleditor"><?php print $productIdInfo['product_long_description']; ?></textarea>
                             <span style="font-weight: bold; color: red;"><?php if (isset($productLongDescriptionError)) { print $productLongDescriptionError; } ?></span>
                         </div>
                     </div>
@@ -276,6 +234,8 @@
                             <span style="font-weight: bold; color: red;">
                                 <?php if (isset($productImageError)) { print $productImageError; } ?>
                             </span>
+                            <br>
+                            <img src="<?php print $productIdInfo['product_image']; ?>" alt="" height="200" width="200"/>
                         </div>
                     </div>
                     <div class="control-group">
@@ -285,6 +245,8 @@
                             <span style="font-weight: bold; color: red;">
                                 <?php if (isset($productImage2Error)) { print $productImage2Error; } ?>
                             </span>
+                            <br>
+                            <img src="<?php print $productIdInfo['product_image2']; ?>" alt="" height="200" width="200"/>
                         </div>
                     </div>
                     <div class="control-group">
@@ -294,6 +256,8 @@
                             <span style="font-weight: bold; color: red;">
                                 <?php if (isset($productImage3Error)) { print $productImage3Error; } ?>
                             </span>
+                            <br>
+                            <img src="<?php print $productIdInfo['product_image3']; ?>" alt="" height="200" width="200"/>
                         </div>
                     </div>
                     <div class="control-group">
@@ -302,15 +266,12 @@
                             <select name="product_publication_status">
                                 <option>--- Select Product Publication Status ---</option>
 
-                                <?php if ($productPublicationStatus == 1) { ?>
+                                <?php if ($productIdInfo['product_publication_status'] == 1) { ?>
                                     <option value="1" selected>Published</option>
                                     <option value="2">Unpublished</option>
-                                <?php } elseif ($productPublicationStatus == 2) { ?>
+                                <?php } elseif ($productIdInfo['product_publication_status'] == 2) { ?>
                                     <option value="1">Published</option>
                                     <option value="2" selected>Unpublished</option>
-                                <?php } else { ?>
-                                    <option value="1">Published</option>
-                                    <option value="2">Unpublished</option>
                                 <?php } ?>
 
                             </select>
@@ -318,7 +279,7 @@
                         </div>
                     </div>
                     <div class="form-actions">
-                        <button type="submit" name="btn" class="btn btn-primary">Save Product</button>
+                        <button type="submit" name="btn" class="btn btn-primary">Update Product</button>
                         <button type="reset" class="btn">Cancel</button>
                     </div>
                 </fieldset>

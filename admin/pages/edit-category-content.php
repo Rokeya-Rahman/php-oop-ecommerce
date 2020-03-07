@@ -71,7 +71,7 @@
                         <label class="control-label">Category Name</label>
                         <div class="controls">
                             <input type="text" name="category_name" class="span6 typeahead" value="<?php print $categoryIdInfo['category_name']; ?>">
-                            <input type="hidden" name="id" class="span6 typeahead" value="<?php print $categoryIdInfo['id']; ?>">
+                            <input type="hidden" name="category_id" class="span6 typeahead" value="<?php print $categoryIdInfo['category_id']; ?>">
                             <span style="font-weight: bold; color: red;"><?php if (isset($categoryNameError)) { print $categoryNameError; } ?></span>
                         </div>
                     </div>
@@ -83,17 +83,17 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label">Publication Status</label>
+                        <label class="control-label">Category Publication Status</label>
                         <div class="controls">
                             <select name="publication_status">
                                 <option>--- Select Publication Status ---</option>
 
-                                <?php if ($categoryIdInfo['publication_status'] == 1) { ?>
+                                <?php if ($categoryIdInfo['category_publication_status'] == 1) { ?>
 
                                     <option value="1" selected>Published</option>
                                     <option value="2">Unpublished</option>
 
-                                <?php } elseif ($categoryIdInfo['publication_status'] == 2) { ?>
+                                <?php } elseif ($categoryIdInfo['category_publication_status'] == 2) { ?>
 
                                     <option value="1">Published</option>
                                     <option value="2" selected>Unpublished</option>

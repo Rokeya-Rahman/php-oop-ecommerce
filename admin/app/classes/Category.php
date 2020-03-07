@@ -17,12 +17,12 @@ class Category
 
     public function saveCategory()
     {
-        $categoryName           =   $_POST['category_name'];
-        $categoryDescription    =   $_POST['category_description'];
-        $publicationStatus      =   $_POST['publication_status'];
+        $categoryName               =   $_POST['category_name'];
+        $categoryDescription        =   $_POST['category_description'];
+        $categoryPublicationStatus  =   $_POST['category_publication_status'];
 
         $link = $this->__construct();
-        $sql  = "INSERT INTO categories (category_name, category_description, publication_status, create_date) VALUES ('".mysqli_real_escape_string($link, $categoryName)."', '".mysqli_real_escape_string($link, $categoryDescription)."', '$publicationStatus', '".date("Y-m-d h:i:sa")."')";
+        $sql  = "INSERT INTO categories (category_name, category_description, category_publication_status, category_create_date) VALUES ('".mysqli_real_escape_string($link, $categoryName)."', '".mysqli_real_escape_string($link, $categoryDescription)."', '$categoryPublicationStatus', '".date("Y-m-d h:i:sa")."')";
         if (mysqli_query($link, $sql))
         {
             $message = 'Category information save successfully';
@@ -39,7 +39,7 @@ class Category
     {
         $link  =    $this->__construct();
         //$sql   =    "SELECT * FROM categories";
-        $sql   =    "SELECT * FROM categories WHERE deletion_status = 0";
+        $sql   =    "SELECT * FROM categories WHERE category_deletion_status = 0";
         $query =    mysqli_query($link, $sql);
         return $query;
     }
@@ -48,7 +48,7 @@ class Category
     public function getCategoryInfoById($categoryEditId)
     {
         $link   =   $this->__construct();
-        $sql    =   "SELECT * FROM categories WHERE id = '$categoryEditId' ";
+        $sql    =   "SELECT * FROM categories WHERE category_id = '$categoryEditId' ";
         $query  =   mysqli_query($link, $sql);
         return $query;
     }
@@ -56,13 +56,13 @@ class Category
 
     public function updateCategory()
     {
-        $categoryId             =   $_POST['id'];
-        $categoryName           =   $_POST['category_name'];
-        $categoryDescription    =   $_POST['category_description'];
-        $publicationStatus      =   $_POST['publication_status'];
+        $categoryId                 =   $_POST['category_id'];
+        $categoryName               =   $_POST['category_name'];
+        $categoryDescription        =   $_POST['category_description'];
+        $categoryPublicationStatus  =   $_POST['category_publication_status'];
 
         $link   =   $this->__construct();
-        $sql    =   "UPDATE categories SET category_name = '".mysqli_real_escape_string($link, $categoryName)."', category_description = '".mysqli_real_escape_string($link, $categoryDescription)."', publication_status = '$publicationStatus', update_date = '".date("Y-m-d h:i:sa")."' WHERE id = '$categoryId'";
+        $sql    =   "UPDATE categories SET category_name = '".mysqli_real_escape_string($link, $categoryName)."', category_description = '".mysqli_real_escape_string($link, $categoryDescription)."', category_publication_status = '$categoryPublicationStatus', category_update_date = '".date("Y-m-d h:i:sa")."' WHERE category_id = '$categoryId'";
 
         if (mysqli_query($link, $sql))
         {
@@ -81,7 +81,7 @@ class Category
     {
         $link   =   $this->__construct();
         //$sql    =   "DELETE FROM categories WHERE product_id = '$categoryDeleteId' ";
-        $sql    =   "UPDATE categories SET deletion_status = 1 WHERE id = '$categoryDeleteId' ";
+        $sql    =   "UPDATE categories SET category_deletion_status = 1 WHERE category_id = '$categoryDeleteId' ";
 
         if (mysqli_query($link, $sql))
         {
