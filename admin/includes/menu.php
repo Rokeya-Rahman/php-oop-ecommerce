@@ -7,6 +7,8 @@
             <li><a href="manage-category.php"><i class="icon-eye-open"></i><span class="hidden-tablet">Manage Category</span></a></li>
             <li><a href="add-product.php"><i class="icon-tasks"></i><span class="hidden-tablet">Add Product</span></a></li>
             <li><a href="manage-product.php"><i class="icon-eye-open"></i><span class="hidden-tablet">Manage Product</span></a></li>
+            <li><a href="add-blog.php"><i class="icon-tasks"></i><span class="hidden-tablet">Add Blog</span></a></li>
+            <li><a href="manage-blog.php"><i class="icon-eye-open"></i><span class="hidden-tablet">Manage Blog</span></a></li>
 
 
 

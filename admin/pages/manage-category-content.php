@@ -7,7 +7,7 @@
     $category = new Category();
     $categories = $category->selectCategoryInfo();
 
-    if (isset($_GET['p_status']))
+    if (isset($_GET['c_status']))
     {
         $categoryDeleteId = $_GET['category_id'];
         //$message = $category->deleteCategory($categoryDeleteId);
@@ -100,7 +100,7 @@
                             <a class="btn btn-info" href="edit-category.php?category_id=<?php print $category['category_id']; ?>">
                                 <i class="halflings-icon white edit"></i>
                             </a>
-                            <a class="btn btn-danger" href="?p_status=delete&category_id=<?php print $category['category_id']; ?>" onclick="return confirm('Are you sure to delete this category information !!!')">
+                            <a class="btn btn-danger" href="?c_status=delete&category_id=<?php print $category['category_id']; ?>" onclick="return confirm('Are you sure to delete this category information !!!')">
                                 <i class="halflings-icon white trash"></i>
                             </a>
                         </td>

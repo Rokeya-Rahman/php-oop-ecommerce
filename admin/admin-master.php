@@ -123,6 +123,11 @@
                             {
                                 include './pages/edit-product-content.php';
                             }
+
+                            if ($pages == 'add-blog-content')
+                            {
+                                include './pages/add-blog-content.php';
+                            }
                         }
                         else
                         {

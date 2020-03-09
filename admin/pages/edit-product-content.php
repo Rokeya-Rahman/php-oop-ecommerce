@@ -12,25 +12,25 @@
 
     date_default_timezone_set('Asia/Dhaka');
 
-    $error = 0;
+    $error = '';
 
     if (isset($_POST['btn'])) {
-        $categoryId = $_POST['product_category_id'];
-        $productName = $_POST['product_name'];
-        $productCode = $_POST['product_code'];
-        $productPrice = $_POST['product_price'];
-        $productQuantity = $_POST['product_quantity'];
-        $productColor = $_POST['product_color'];
-        $productShortDescription = $_POST['product_short_description'];
-        $productLongDescription = $_POST['product_long_description'];
-        $productImage = $_FILES['product_image'];
-        $productImage2 = $_FILES['product_image2'];
-        $productImage3 = $_FILES['product_image3'];
-        $productPublicationStatus = $_POST['product_publication_status'];
+        $productCategoryId          =   $_POST['product_category_id'];
+        $productName                =   $_POST['product_name'];
+        $productCode                =   $_POST['product_code'];
+        $productPrice               =   $_POST['product_price'];
+        $productQuantity            =   $_POST['product_quantity'];
+        $productColor               =   $_POST['product_color'];
+        $productShortDescription    =   $_POST['product_short_description'];
+        $productLongDescription     =   $_POST['product_long_description'];
+        $productImage               =   $_FILES['product_image'];
+        $productImage2              =   $_FILES['product_image2'];
+        $productImage3              =   $_FILES['product_image3'];
+        $productPublicationStatus   =   $_POST['product_publication_status'];
 
-        if ($categoryId == 0) {
+        if ($productCategoryId == 0) {
             $error++;
-            $categoryIdError = 'Category name must be required';
+            $productCategoryIdError = 'Category name must be required';
         }
 
         if ($productName == '') {
@@ -68,54 +68,65 @@
             $productLongDescriptionError = 'Product long description must be required';
         }
 
-        if ($productImage['name'] != '') {
-            if ($productImage['tmp_name'] != '') {
-                if ($productImage['size'] > (2 * 1024 * 1024)) {
+        if ($productImage['name'] != '')
+        {
+            if ($productImage['tmp_name'] != '')
+            {
+                if ($productImage['size'] > (2 * 1024 * 1024))
+                {
                     $error++;
                     $productImageError = 'Your image size is too large, please select with in 2 MB';
                 }
-            } else {
+            }
+            else
+            {
                 $error++;
                 $productImageError = 'Invalid Image ! Please choose a valid image';
             }
-        } else {
-            $error++;
-            $productImageError = 'Product image must be required';
         }
 
-        if ($productImage2['name'] != '') {
-            if ($productImage2['tmp_name'] != '') {
-                if ($productImage2['size'] > (2 * 1024 * 1024)) {
+        if ($productImage2['name'] != '')
+        {
+            if ($productImage2['tmp_name'] != '')
+            {
+                if ($productImage2['size'] > (2 * 1024 * 1024))
+                {
                     $error++;
                     $productImage2Error = 'Your image size is too large, please select with in 2 MB';
                 }
-            } else {
+            }
+            else
+            {
                 $error++;
                 $productImage2Error = 'Invalid Image ! Please choose a valid image';
             }
-        } else {
-            $error++;
-            $productImage2Error = 'Product image must be required';
         }
 
-        if ($productImage3['name'] != '') {
-            if ($productImage3['tmp_name'] != '') {
-                if ($productImage3['size'] > (2 * 1024 * 1024)) {
+        if ($productImage3['name'] != '')
+        {
+            if ($productImage3['tmp_name'] != '')
+            {
+                if ($productImage3['size'] > (2 * 1024 * 1024))
+                {
                     $error++;
                     $productImage3Error = 'Your image size is too large, please select with in 2 MB';
                 }
-            } else {
+            }
+            else
+            {
                 $error++;
                 $productImage3Error = 'Invalid Image ! Please choose a valid image';
             }
-        } else {
-            $error++;
-            $productImage3Error = 'Product image must be required';
         }
 
         if ($productPublicationStatus == 0) {
             $error++;
             $productPublicationStatusError = 'Publication status must be required';
+        }
+
+        if ($error == 0)
+        {
+            $product->updateProduct();
         }
     }
 
@@ -143,15 +154,6 @@
         </div>
         <div class="box-content">
 
-            <?php if (isset($message) && $message != '') { ?>
-
-                <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <strong><?php print $message; ?></strong>
-                </div>
-
-            <?php } ?>
-
             <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
                 <fieldset>
                     <div class="control-group">
@@ -175,13 +177,14 @@
                                 <?php } ?>
 
                             </select>
-                            <span style="font-weight: bold; color: red;"><?php if (isset($categoryIdError)) { print $categoryIdError; } ?></span>
+                            <span style="font-weight: bold; color: red;"><?php if (isset($productCategoryIdError)) { print $productCategoryIdError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Product Name</label>
                         <div class="controls">
                             <input type="text" name="product_name" class="span6 typeahead" value="<?php print $productIdInfo['product_name']; ?>">
+                            <input type="hidden" name="product_id" class="span6 typeahead" value="<?php print $productIdInfo['product_id']; ?>">
                             <span style="font-weight: bold; color: red;"><?php if (isset($productNameError)) { print $productNameError; } ?></span>
                         </div>
                     </div>
@@ -231,6 +234,7 @@
                         <label class="control-label">Product Image</label>
                         <div class="controls">
                             <input type="file" name="product_image" accept="image/*" class="span6 typeahead">
+                            <input type="hidden" name="old_product_image" value="<?php print $productIdInfo['product_image']; ?>"/>
                             <span style="font-weight: bold; color: red;">
                                 <?php if (isset($productImageError)) { print $productImageError; } ?>
                             </span>
@@ -242,6 +246,7 @@
                         <label class="control-label">Product Image 2</label>
                         <div class="controls">
                             <input type="file" name="product_image2" accept="image/*" class="span6 typeahead">
+                            <input type="hidden" name="old_product_image2" value="<?php print $productIdInfo['product_image2']; ?>"/>
                             <span style="font-weight: bold; color: red;">
                                 <?php if (isset($productImage2Error)) { print $productImage2Error; } ?>
                             </span>
@@ -253,6 +258,7 @@
                         <label class="control-label">Product Image 3</label>
                         <div class="controls">
                             <input type="file" name="product_image3" accept="image/*" class="span6 typeahead">
+                            <input type="hidden" name="old_product_image3" value="<?php print $productIdInfo['product_image3']; ?>"/>
                             <span style="font-weight: bold; color: red;">
                                 <?php if (isset($productImage3Error)) { print $productImage3Error; } ?>
                             </span>
