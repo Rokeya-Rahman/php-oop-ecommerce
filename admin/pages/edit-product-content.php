@@ -3,10 +3,10 @@
     require_once 'vendor/autoload.php';
     use App\classes\Product;
 
-    $editProductId = $_GET['product_id'];
-    $product = new Product();
-    $query = $product->getProductInfoById($editProductId);
-    $productIdInfo = mysqli_fetch_assoc($query);
+    $editProductId  =   $_GET['product_id'];
+    $product        =   new Product();
+    $query          =   $product->getProductInfoById($editProductId);
+    $productIdInfo  =   mysqli_fetch_assoc($query);
 
     $categories = $product->selectCategoryInfo();
 
@@ -239,7 +239,7 @@
                                 <?php if (isset($productImageError)) { print $productImageError; } ?>
                             </span>
                             <br>
-                            <img src="<?php print $productIdInfo['product_image']; ?>" alt="" height="200" width="200"/>
+                            <img src="<?php print $productIdInfo['product_image']; ?>" alt="<?php print $productIdInfo['product_name']; ?>" height="200" width="200"/>
                         </div>
                     </div>
                     <div class="control-group">
@@ -251,7 +251,7 @@
                                 <?php if (isset($productImage2Error)) { print $productImage2Error; } ?>
                             </span>
                             <br>
-                            <img src="<?php print $productIdInfo['product_image2']; ?>" alt="" height="200" width="200"/>
+                            <img src="<?php print $productIdInfo['product_image2']; ?>" alt="<?php print $productIdInfo['product_name']; ?>" height="200" width="200"/>
                         </div>
                     </div>
                     <div class="control-group">
@@ -263,7 +263,7 @@
                                 <?php if (isset($productImage3Error)) { print $productImage3Error; } ?>
                             </span>
                             <br>
-                            <img src="<?php print $productIdInfo['product_image3']; ?>" alt="" height="200" width="200"/>
+                            <img src="<?php print $productIdInfo['product_image3']; ?>" alt="<?php print $productIdInfo['product_name']; ?>" height="200" width="200"/>
                         </div>
                     </div>
                     <div class="control-group">
@@ -286,7 +286,7 @@
                     </div>
                     <div class="form-actions">
                         <button type="submit" name="btn" class="btn btn-primary">Update Product</button>
-                        <button type="reset" class="btn">Cancel</button>
+                        <a href="manage-product.php" class="btn">Cancel</a>
                     </div>
                 </fieldset>
             </form>

@@ -3,6 +3,11 @@
     require_once 'vendor/autoload.php';
     use App\classes\Blog;
 
+    $editBlogId =   $_GET['blog_id'];
+    $blog       =   new Blog();
+    $query      =   $blog->getBlogInfoById($editBlogId);
+    $blogIdInfo =   mysqli_fetch_assoc($query);
+
     date_default_timezone_set('Asia/Dhaka');
 
     $error = '';
@@ -56,11 +61,6 @@
                 $blogImageError = 'Invalid Image ! Please choose a valid image';
             }
         }
-        else
-        {
-            $error++;
-            $blogImageError = 'Blog image must be required';
-        }
 
         if ($blogPublicationStatus == 0)
         {
@@ -70,14 +70,7 @@
 
         if ($error == 0)
         {
-            $blog = new Blog();
-            $message = $blog->saveBlog();
-            $blogName               =   '';
-            $blogTag                =   '';
-            $blogShortDescription   =   '';
-            $blogLongDescription    =   '';
-            $blogImage              =   '';
-            $blogPublicationStatus  =   '';
+            $blog->updateBlog();
         }
     }
 
@@ -118,28 +111,29 @@
                     <div class="control-group">
                         <label class="control-label">Blog Name</label>
                         <div class="controls">
-                            <input type="text" name="blog_name" class="span6 typeahead" value="<?php if (isset($blogName)) { print $blogName; } ?>">
+                            <input type="text" name="blog_name" class="span6 typeahead" value="<?php print $blogIdInfo['blog_name']; ?>">
+                            <input type="hidden" name="blog_id" class="span6 typeahead" value="<?php print $blogIdInfo['blog_id']; ?>">
                             <span style="font-weight: bold; color: red;"><?php if (isset($blogNameError)) { print $blogNameError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Blog Tag</label>
                         <div class="controls">
-                            <input type="text" name="blog_tag" class="span6 typeahead" value="<?php if (isset($blogTag)) { print $blogTag; } ?>">
+                            <input type="text" name="blog_tag" class="span6 typeahead" value="<?php print $blogIdInfo['blog_tag']; ?>">
                             <span style="font-weight: bold; color: red;"><?php if (isset($blogTagError)) { print $blogTagError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Blog Short Description</label>
                         <div class="controls">
-                            <textarea name="blog_short_description" rows="3" class="span6 typeahead"><?php if (isset($blogShortDescription)) { print $blogShortDescription; } ?></textarea>
+                            <textarea name="blog_short_description" rows="3" class="span6 typeahead"><?php print $blogIdInfo['blog_short_description']; ?></textarea>
                             <span style="font-weight: bold; color: red;"><?php if (isset($blogShortDescriptionError)) { print $blogShortDescriptionError; } ?></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Blog Long Description</label>
                         <div class="controls">
-                            <textarea name="blog_long_description" class="cleditor"><?php if (isset($blogLongDescription)) { print $blogLongDescription; } ?></textarea>
+                            <textarea name="blog_long_description" class="cleditor"><?php print $blogIdInfo['blog_long_description']; ?></textarea>
                             <span style="font-weight: bold; color: red;"><?php if (isset($blogLongDescriptionError)) { print $blogLongDescriptionError; } ?></span>
                         </div>
                     </div>
@@ -147,9 +141,12 @@
                         <label class="control-label">Blog Image</label>
                         <div class="controls">
                             <input type="file" name="blog_image" accept="image/*" class="span6 typeahead">
+                            <input type="hidden" name="blog_old_image" value="<?php print $blogIdInfo['blog_image']; ?>">
                             <span style="font-weight: bold; color: red;">
                                 <?php if (isset($blogImageError)) { print $blogImageError; } ?>
                             </span>
+                            <br>
+                            <img src="<?php print $blogIdInfo['blog_image']; ?>" alt="<?php print $blogIdInfo['blog_name']; ?>" height="200" width="200"/>
                         </div>
                     </div>
                     <div class="control-group">
@@ -158,15 +155,12 @@
                             <select name="blog_publication_status">
                                 <option>--- Select Publication Status ---</option>
 
-                                <?php if ($blogPublicationStatus == 1) { ?>
+                                <?php if ($blogIdInfo['blog_publication_status'] == 1) { ?>
                                     <option value="1" selected>Published</option>
                                     <option value="2">Unpublished</option>
-                                <?php } elseif ($blogPublicationStatus == 2) { ?>
+                                <?php } elseif ($blogIdInfo['blog_publication_status'] == 2) { ?>
                                     <option value="1">Published</option>
                                     <option value="2" selected>Unpublished</option>
-                                <?php } else { ?>
-                                    <option value="1">Published</option>
-                                    <option value="2">Unpublished</option>
                                 <?php } ?>
 
                             </select>
@@ -174,7 +168,7 @@
                         </div>
                     </div>
                     <div class="form-actions">
-                        <button type="submit" name="btn" class="btn btn-primary">Save Blog</button>
+                        <button type="submit" name="btn" class="btn btn-primary">Update Blog</button>
                         <a href="manage-blog.php" class="btn">Cancel</a>
                     </div>
                 </fieldset>

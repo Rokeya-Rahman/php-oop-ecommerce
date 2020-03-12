@@ -224,10 +224,6 @@ class Product extends Category
         }
 
         $sql    =   "UPDATE products SET product_category_id = '$productCategoryId', product_name = '".mysqli_real_escape_string($link, $productName)."', product_code = '".mysqli_real_escape_string($link, $productCode)."', product_price = '".mysqli_real_escape_string($link, $productPrice)."', product_quantity = '".mysqli_real_escape_string($link, $productQuantity)."', product_color = '".mysqli_real_escape_string($link, $productColor)."', product_short_description = '".mysqli_real_escape_string($link, $productShortDescription)."', product_long_description = '".mysqli_real_escape_string($link, $productLongDescription)."', product_image = '$productImageUrl', product_image2 = '$productImageUrl2', product_image3 = '$productImageUrl3', product_publication_status = '$productPublicationStatus', product_update_date = '".date("Y-m-d h:i:sa")."' WHERE product_id = '$productId' ";
-//        else
-//        {
-//            $sql    =   "UPDATE products SET product_category_id = '$productCategoryId', product_name = '".mysqli_real_escape_string($link, $productName)."', product_code = '".mysqli_real_escape_string($link, $productCode)."', product_price = '".mysqli_real_escape_string($link, $productPrice)."', product_quantity = '".mysqli_real_escape_string($link, $productQuantity)."', product_color = '".mysqli_real_escape_string($link, $productColor)."', product_short_description = '".mysqli_real_escape_string($link, $productShortDescription)."', product_long_description = '".mysqli_real_escape_string($link, $productLongDescription)."', product_publication_status = '$productPublicationStatus', product_update_date = '".date("Y-m-d h:i:sa")."' WHERE product_id = '$productId' ";
-//        }
 
         if (mysqli_query($link, $sql))
         {

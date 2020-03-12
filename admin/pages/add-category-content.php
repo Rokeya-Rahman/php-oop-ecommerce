@@ -18,15 +18,17 @@
             $error++;
             $categoryNameError = 'Category name must be required';
         }
+
         if ($categoryDescription == '')
         {
             $error++;
             $categoryDescriptionError = 'Category description must be required';
         }
+
         if ($categoryPublicationStatus == 0)
         {
             $error++;
-            $categoryPublicationStatusError = 'Publication status must be required';
+            $categoryPublicationStatusError = 'Category publication status must be required';
         }
 
         if ($error == 0)
@@ -111,7 +113,7 @@
                     </div>
                     <div class="form-actions">
                         <button type="submit" name="btn" class="btn btn-primary">Save Category</button>
-                        <button type="reset" class="btn">Cancel</button>
+                        <a href="manage-category.php" class="btn">Cancel</a>
                     </div>
                 </fieldset>
             </form>

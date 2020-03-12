@@ -81,7 +81,7 @@
                         <th>Product Image</th>
                         <th>Product Image 2</th>
                         <th>Product Image 3</th>
-                        <th>Publication Status</th>
+                        <th>Product Publication Status</th>
                         <th>Actions</th>
                     </tr>
                     </thead>

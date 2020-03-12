@@ -128,6 +128,16 @@
                             {
                                 include './pages/add-blog-content.php';
                             }
+
+                            if ($pages == 'manage-blog-content')
+                            {
+                                include './pages/manage-blog-content.php';
+                            }
+
+                            if ($pages == 'edit-blog-content')
+                            {
+                                include './pages/edit-blog-content.php';
+                            }
                         }
                         else
                         {

@@ -143,7 +143,7 @@
         if ($productPublicationStatus == 0)
         {
             $error++;
-            $productPublicationStatusError = 'Publication status must be required';
+            $productPublicationStatusError = 'Product publication status must be required';
         }
 
         if ($error == 0)
@@ -319,7 +319,7 @@
                     </div>
                     <div class="form-actions">
                         <button type="submit" name="btn" class="btn btn-primary">Save Product</button>
-                        <button type="reset" class="btn">Cancel</button>
+                        <a href="manage-product.php" class="btn">Cancel</a>
                     </div>
                 </fieldset>
             </form>

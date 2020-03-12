@@ -3,10 +3,10 @@
     require_once 'vendor/autoload.php';
     use App\classes\Category;
 
-    $categoryEditId = $_GET['category_id'];
-    $category = new Category();
-    $result = $category->getCategoryInfoById($categoryEditId);
-    $categoryIdInfo = mysqli_fetch_assoc($result);
+    $categoryEditId =   $_GET['category_id'];
+    $category       =   new Category();
+    $result         =   $category->getCategoryInfoById($categoryEditId);
+    $categoryIdInfo =   mysqli_fetch_assoc($result);
 
     date_default_timezone_set('Asia/Dhaka');
 
@@ -106,7 +106,7 @@
                     </div>
                     <div class="form-actions">
                         <button type="submit" name="btn" class="btn btn-primary">Update Category</button>
-                        <button type="reset" class="btn">Cancel</button>
+                        <a href="manage-category.php" class="btn">Cancel</a>
                     </div>
                 </fieldset>
             </form>
