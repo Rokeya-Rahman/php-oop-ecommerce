@@ -67,7 +67,7 @@ class Category
         if (mysqli_query($link, $sql))
         {
             $_SESSION['message'] = "Category information update successfully";
-            header('Location: manage-category.php');
+            header('Location: manage-men-fashion.php');
 
         }
         else
@@ -89,7 +89,7 @@ class Category
             header('Location: manage-category.php?message='.$message);
 
             //$message = 'Category information delete successfully';
-            //header("Location: manage-category.php?message={$message}");
+            //header("Location: manage-men-fashion.php?message={$message}");
         }
         else
         {

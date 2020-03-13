@@ -51,13 +51,13 @@
                 {
                     include './pages/category-content.php';
                 }
-                if ($pages == 'special-content')
-                {
-                    include './pages/special-content.php';
-                }
                 if ($pages == 'blog-content')
                 {
                     include './pages/blog-content.php';
+                }
+                if ($pages == 'blog-details-content')
+                {
+                    include './pages/blog-details-content.php';
                 }
                 if ($pages == 'contact-content')
                 {
