@@ -1,3 +1,18 @@
+<?php
+
+    require_once 'vendor/autoload.php';
+
+    use App\classes\Application;
+
+    $categoryProductId  =   $_GET['category'];
+    $application        =   new Application();
+    $categoryProducts   =   $application->selectCategoryProductById($categoryProductId);
+    $categoryProduct    =   mysqli_fetch_assoc($categoryProducts);
+
+?>
+
+
+
 <div class="men">
     <div class="container">
         <div class="col-md-3 sidebar">
@@ -144,84 +159,17 @@
                 <div class="clearfix"></div>
             </div>
             <div class="span_2">
-                <div class="col_1_of_single1 span_1_of_single1">
-                    <a href="single.html">
-                        <img src="assets/images/pic2.jpg" class="img-responsive" alt=""/>
-                        <h3>parum clari</h3>
-                        <p>Duis autem vel eum iriure</p>
-                        <h4>Rs.399</h4>
-                    </a>
-                </div>
-                <div class="col_1_of_single1 span_1_of_single1">
-                    <a href="single.html">
-                        <img src="assets/images/pic1.jpg" class="img-responsive" alt=""/>
-                        <h3>parum clari</h3>
-                        <p>Duis autem vel eum iriure</p>
-                        <h4>Rs.399</h4>
-                    </a>
-                </div>
-                <div class="col_1_of_single1 span_1_of_single1">
-                    <a href="single.html">
-                        <img src="assets/images/pic3.jpg" class="img-responsive" alt=""/>
-                        <h3>parum clari</h3>
-                        <p>Duis autem vel eum iriure</p>
-                        <h4>Rs.399</h4>
-                    </a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="span_2">
-                <div class="col_1_of_single1 span_1_of_single1">
-                    <a href="single.html">
-                        <img src="assets/images/pic4.jpg" class="img-responsive" alt=""/>
-                        <h3>parum clari</h3>
-                        <p>Duis autem vel eum iriure</p>
-                        <h4>Rs.399</h4>
-                    </a>
-                </div>
-                <div class="col_1_of_single1 span_1_of_single1">
-                    <a href="single.html">
-                        <img src="assets/images/pic5.jpg" class="img-responsive" alt=""/>
-                        <h3>parum clari</h3>
-                        <p>Duis autem vel eum iriure</p>
-                        <h4>Rs.399</h4>
-                    </a>
-                </div>
-                <div class="col_1_of_single1 span_1_of_single1">
-                    <a href="single.html">
-                        <img src="assets/images/pic6.jpg" class="img-responsive" alt=""/>
-                        <h3>parum clari</h3>
-                        <p>Duis autem vel eum iriure</p>
-                        <h4>Rs.399</h4>
-                    </a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="span_3">
-                <div class="col_1_of_single1 span_1_of_single1">
-                    <a href="single.html">
-                        <img src="assets/images/pic7.jpg" class="img-responsive" alt=""/>
-                        <h3>parum clari</h3>
-                        <p>Duis autem vel eum iriure</p>
-                        <h4>Rs.399</h4>
-                    </a>
-                </div>
-                <div class="col_1_of_single1 span_1_of_single1">
-                    <a href="single.html">
-                        <img src="assets/images/pic8.jpg" class="img-responsive" alt=""/>
-                        <h3>parum clari</h3>
-                        <p>Duis autem vel eum iriure</p>
-                        <h4>Rs.399</h4>
-                    </a>
-                </div>
-                <div class="col_1_of_single1 span_1_of_single1">
-                    <a href="single.html">
-                        <img src="assets/images/pic9.jpg" class="img-responsive" alt=""/>
-                        <h3>parum clari</h3>
-                        <p>Duis autem vel eum iriure</p>
-                        <h4>Rs.399</h4>
-                    </a>
-                </div>
+                <?php foreach ($categoryProducts as $categoryProduct) { ?>
+                    <div class="col_1_of_single1 span_1_of_single1">
+                        <a href="product.php?product_name=<?php print str_replace(' ', '-', $categoryProduct['product_name']); ?>&product=<?php print $categoryProduct['product_id']; ?>">
+                            <img src="admin/<?php print $categoryProduct['product_image']; ?>" class="img-responsive" alt="<?php print $categoryProduct['product_name']; ?>"/>
+                            <h3 style="color: #942a25; font-weight: 700;"><?php print $categoryProduct['product_name']; ?></h3>
+                            <h2 style="margin: 8px 0; color: red;">&#2547; <?php print $categoryProduct['product_price']; ?></h2>
+                            <h3 style="color: #942a25; font-weight: 700; margin-bottom: 15px;">Product Code : <?php print $categoryProduct['product_code']; ?></h3>
+                            <p><?php print $categoryProduct['product_short_description']; ?></p>
+                        </a>
+                    </div>
+                <?php } ?>
                 <div class="clearfix"></div>
             </div>
         </div>

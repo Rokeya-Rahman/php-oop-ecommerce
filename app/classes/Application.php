@@ -25,6 +25,38 @@ class Application
         return $query;
     }
 
+    public function selectNewProductInformation()
+    {
+        $link   =   $this->__construct();
+        $sql    =   "SELECT * FROM products WHERE product_publication_status = 1 AND product_deletion_status = 0 ORDER BY product_id DESC LIMIT 8";
+        $query  =   mysqli_query($link, $sql);
+        return $query;
+    }
+
+    public function selectAllProductInformation()
+    {
+        $link   =   $this->__construct();
+        $sql    =   "SELECT * FROM products WHERE product_publication_status = 1 AND product_deletion_status = 0 ORDER BY product_id DESC";
+        $query  =   mysqli_query($link, $sql);
+        return $query;
+    }
+
+    public function selectCategoryProductById($categoryProductId)
+    {
+        $link   =   $this->__construct();
+        $sql    =   "SELECT * FROM products WHERE product_category_id = '$categoryProductId' AND product_publication_status = 1 AND product_deletion_status = 0 ORDER BY product_id DESC";
+        $query  =   mysqli_query($link, $sql);
+        return $query;
+    }
+
+    public function selectProductIdInformation($productDetailsId)
+    {
+        $link   =   $this->__construct();
+        $sql    =   "SELECT * FROM products WHERE product_id = '$productDetailsId'";
+        $query  =   mysqli_query($link, $sql);
+        return $query;
+    }
+
     public function selectBlogInformation()
     {
         $link   =   $this->__construct();

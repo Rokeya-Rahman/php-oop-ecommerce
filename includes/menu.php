@@ -18,7 +18,9 @@
             <ul class="megamenu skyblue">
                 <li><a class="color8" href="index.php">Home</a></li>
                 <?php foreach ($categories as $category) { ?>
-                    <li><a class="color8" href="category.php?category=<?php print $category['category_id']; ?>"><?php print $category['category_name'] ?></a></li>
+                    <li>
+                        <a class="color8" href="category.php?Category_name=<?php print str_replace(' ', '-', $category['category_name']); ?>&category=<?php print $category['category_id']; ?>"><?php print $category['category_name']; ?></a>
+                    </li>
                 <?php } ?>
                 <li><a class="color8" href="blog.php">Blog</a></li>
                 <li><a class="color8" href="contact.php">Contact</a></li>

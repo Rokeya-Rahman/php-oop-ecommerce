@@ -1,3 +1,24 @@
+<?php
+
+    require_once 'vendor/autoload.php';
+
+    use App\classes\Application;
+
+    $application = new Application();
+
+    $newProducts = $application->selectNewProductInformation();
+    $newProduct = mysqli_fetch_assoc($newProducts);
+
+    $allProducts = $application->selectAllProductInformation();
+    $allProduct = mysqli_fetch_assoc($allProducts);
+
+    $blogs = $application->selectBlogInformation();
+    $blog = mysqli_fetch_assoc($blogs);
+
+?>
+
+
+
 <div class="index_slider">
     <div class="container">
         <div class="callbacks_container">
@@ -57,77 +78,32 @@
         </div>
         <div class="sellers_grid">
             <ul class="sellers">
-                <i class="star"> </i>
-                <li class="sellers_desc"><h2>Best Sellers</h2></li>
+                <i class="star"></i>
+                <li class="sellers_desc"><h2>New Product</h2></li>
                 <div class="clearfix"> </div>
             </ul>
         </div>
         <div class="grid_2">
-            <div class="col-md-3 span_6">
-                <div class="box_inner">
-                    <img src="assets/images/p1.jpg" class="img-responsive" alt=""/>
-                    <div class="sale-box"> </div>
-                    <div class="desc">
-                        <h3>Ullamcorper suscipit</h3>
-                        <h4>178,90 $</h4>
-                        <ul class="list2">
-                            <li class="list2_left"><span class="m_1"><a href="#" class="link">Add to Cart</a></span></li>
-                            <li class="list2_right"><span class="m_2"><a href="#" class="link1">See More</a></span></li>
-                            <div class="clearfix"> </div>
-                        </ul>
-                        <div class="heart"> </div>
+            <?php foreach ($newProducts as $newProduct) { ?>
+                <div class="col-md-3 span_6" style="margin-bottom: 30px;">
+                    <div class="box_inner">
+<!--                        <img src="assets/images/p1.jpg" class="img-responsive" alt=""/>-->
+                        <img src="admin/<?php print $newProduct['product_image']; ?>" class="img-responsive" alt=""/>
+                        <div class="desc">
+                            <h3><?php print $newProduct['product_name']; ?></h3>
+                            <h4>&#2547; <?php print $newProduct['product_price']; ?></h4>
+                            <h5>Product Code : <?php print $newProduct['product_code']; ?></h5>
+                            <ul class="list2">
+                                <li class="list2_left"><span class="m_1"><a href="#" class="link">Add to Cart</a></span></li>
+                                <li class="list2_right"><span class="m_2"><a href="product.php?product_name=<?php print str_replace(' ', '-', $newProduct['product_name']); ?>&product=<?php print $newProduct['product_id']; ?>" class="link1">See More</a></span></li>
+                                <div class="clearfix"> </div>
+                            </ul>
+                            <div class="heart"> </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3 span_6">
-                <div class="box_inner">
-                    <img src="assets/images/p2.jpg" class="img-responsive" alt=""/>
-                    <div class="sale-box"> </div>
-                    <div class="desc">
-                        <h3>Ullamcorper suscipit</h3>
-                        <h4>178,90 $</h4>
-                        <ul class="list2">
-                            <li class="list2_left"><span class="m_1"><a href="#" class="link">Add to Cart</a></span></li>
-                            <li class="list2_right"><span class="m_2"><a href="#" class="link1">See More</a></span></li>
-                            <div class="clearfix"> </div>
-                        </ul>
-                        <div class="heart"> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 span_6">
-                <div class="box_inner">
-                    <img src="assets/images/p3.jpg" class="img-responsive" alt=""/>
-                    <div class="sale-box"> </div>
-                    <div class="desc">
-                        <h3>Ullamcorper suscipit</h3>
-                        <h4>178,90 $</h4>
-                        <ul class="list2">
-                            <li class="list2_left"><span class="m_1"><a href="#" class="link">Add to Cart</a></span></li>
-                            <li class="list2_right"><span class="m_2"><a href="#" class="link1">See More</a></span></li>
-                            <div class="clearfix"> </div>
-                        </ul>
-                        <div class="heart"> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 span_6">
-                <div class="box_inner">
-                    <img src="assets/images/p4.jpg" class="img-responsive" alt=""/>
-                    <div class="sale-box"> </div>
-                    <div class="desc">
-                        <h3>Ullamcorper suscipit</h3>
-                        <h4>178,90 $</h4>
-                        <ul class="list2">
-                            <li class="list2_left"><span class="m_1"><a href="#" class="link">Add to Cart</a></span></li>
-                            <li class="list2_right"><span class="m_2"><a href="#" class="link1">See More</a></span></li>
-                            <div class="clearfix"> </div>
-                        </ul>
-                        <div class="heart"> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
+            <?php } ?>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>
@@ -138,26 +114,18 @@
             <li class="promote_head"><h3>Promotion</h3></li>
         </ul>
         <ul id="flexiselDemo3">
-            <li><img src="assets/images/n1.jpg"  class="img-responsive" /><div class="grid-flex"><h4>Contrary to popular </h4><p>589,90 $</p>
-                    <div class="m_3"><a href="#" class="link2">Add to Cart</a></div>
-                    <div class="ticket"> </div>
-                </div></li>
-            <li><img src="assets/images/n2.jpg"  class="img-responsive" /><div class="grid-flex"><h4>Contrary to popular </h4><p>589,90 $</p>
-                    <div class="m_3"><a href="#" class="link2">Add to Cart</a></div>
-                    <div class="ticket"> </div>
-                </div></li>
-            <li><img src="assets/images/n3.jpg"  class="img-responsive" /><div class="grid-flex"><h4>Contrary to popular </h4><p>589,90 $</p>
-                    <div class="m_3"><a href="#" class="link2">Add to Cart</a></div>
-                    <div class="ticket"> </div>
-                </div></li>
-            <li><img src="assets/images/n4.jpg"  class="img-responsive" /><div class="grid-flex"><h4>Contrary to popular </h4><p>589,90 $</p>
-                    <div class="m_3"><a href="#" class="link2">Add to Cart</a></div>
-                    <div class="ticket"> </div>
-                </div></li>
-            <li><img src="assets/images/n5.jpg"  class="img-responsive" /><div class="grid-flex"><h4>Contrary to popular </h4><p>589,90 $</p>
-                    <div class="m_3"><a href="#" class="link2">Add to Cart</a></div>
-                    <div class="ticket"> </div>
-                </div></li>
+            <?php foreach ($allProducts as $allProduct) { ?>
+                <li>
+<!--                    <img src="assets/images/n1.jpg"  class="img-responsive" />-->
+                    <img src="admin/<?php print $allProduct['product_image']; ?>" class="img-responsive" alt=""/>
+                    <div class="grid-flex">
+                        <h4><?php print $allProduct['product_name']; ?></h4>
+                        <p>&#2547; <?php print $allProduct['product_price']; ?></p>
+                        <div class="m_3"><a href="product.php?product_name=<?php print str_replace(' ', '-', $allProduct['product_name']); ?>&product=<?php print $allProduct['product_id']; ?>" class="link1">See More</a></div>
+                        <div class="ticket"> </div>
+                    </div>
+                </li>
+            <?php } ?>
         </ul>
         <script type="text/javascript">
             $(window).load(function() {
@@ -191,111 +159,73 @@
 </div>
 <div class="container">
     <div class="content_middle_bottom">
-        <div class="col-md-4">
+<!--        <div class="col-md-4">-->
+<!--            <ul class="spinner">-->
+<!--                <i class="spinner_icon"> </i>-->
+<!--                <li class="spinner_head"><h3>But I must explain</h3></li>-->
+<!--                <div class="clearfix"> </div>-->
+<!--            </ul>-->
+<!--            <div class="timer_box">-->
+<!--                <div class="thumb"> </div>-->
+<!--                <div class="timer_grid">-->
+<!--                    <ul id="countdown">-->
+<!--                    </ul>-->
+<!--                    <ul class="navigation">-->
+<!--                        <li>-->
+<!--                            <p class="timeRefDays">DAYS</p>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <p class="timeRefHours">HOURS</p>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <p class="timeRefMinutes">MINUTES</p>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <p class="timeRefSeconds">SECONDS</p>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="thumb_desc">-->
+<!--                    <h3> totam rem aperiam</h3>-->
+<!--                    <div class="price">-->
+<!--                        <span class="reducedfrom">$140.00</span>-->
+<!--                        <span class="actual">$120.00</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <a href="#"><div class="m_3 deal"><div class="link3">Buy this deal</div></div></a>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="col-md-12">
             <ul class="spinner">
-                <i class="spinner_icon"> </i>
-                <li class="spinner_head"><h3>But I must explain</h3></li>
-                <div class="clearfix"> </div>
-            </ul>
-            <div class="timer_box">
-                <div class="thumb"> </div>
-                <div class="timer_grid">
-                    <ul id="countdown">
-                    </ul>
-                    <ul class="navigation">
-                        <li>
-                            <p class="timeRefDays">DAYS</p>
-                        </li>
-                        <li>
-                            <p class="timeRefHours">HOURS</p>
-                        </li>
-                        <li>
-                            <p class="timeRefMinutes">MINUTES</p>
-                        </li>
-                        <li>
-                            <p class="timeRefSeconds">SECONDS</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="thumb_desc">
-                    <h3> totam rem aperiam</h3>
-                    <div class="price">
-                        <span class="reducedfrom">$140.00</span>
-                        <span class="actual">$120.00</span>
-                    </div>
-                </div>
-                <a href="#"><div class="m_3 deal"><div class="link3">Buy this deal</div></div></a>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <ul class="spinner">
-                <i class="paperclip"> </i>
+                <i class="paperclip"></i>
                 <li class="spinner_head"><h3>From the Blog</h3></li>
                 <div class="clearfix"> </div>
             </ul>
-            <div class="a-top">
-                <div class="left-grid">
-                    <img src="assets/images/t4.jpg" class="img-responsive" alt=""/>
+            <?php foreach ($blogs as $blog) { ?>
+                <div class="a-top">
+                    <div class="left-grid">
+                        <img src="admin/<?php print $blog['blog_image']; ?>" class="img-responsive" alt="<?php print $blog['blog_name']; ?>"/>
+                    </div>
+                    <div class="right-grid">
+                        <h4><?php print $blog['blog_name']; ?></a></h4>
+                        <p><?php print $blog['blog_short_description']; ?></a></p>
+                    </div>
+                    <div class="but">
+                        <a class="arrow" href="blog-details.php?blog_title=<?php print str_replace(' ', '-', $blog['blog_name']); ?>&blog_tag=<?php print str_replace(' ', '-', $blog['blog_tag']); ?>&blog=<?php print $blog['blog_id']; ?>"> </a>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="right-grid">
-                    <h4><a href="#">Duis autem vel eum iriure dolor in hendrerit</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat</p>
-                </div>
-                <div class="but">
-                    <a class="arrow" href="#"> </a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="a-top">
-                <div class="left-grid">
-                    <img src="assets/images/t5.jpg" class="img-responsive" alt=""/>
-                </div>
-                <div class="right-grid">
-                    <h4><a href="#">Duis autem vel eum iriure dolor in hendrerit</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat</p>
-                </div>
-                <div class="but">
-                    <a class="arrow" href="#"> </a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="a-top">
-                <div class="left-grid">
-                    <img src="assets/images/t6.jpg" class="img-responsive" alt=""/>
-                </div>
-                <div class="right-grid">
-                    <h4><a href="#">Duis autem vel eum iriure dolor in hendrerit</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat</p>
-                </div>
-                <div class="but">
-                    <a class="arrow" href="#"> </a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="a-top">
-                <div class="left-grid">
-                    <img src="assets/images/t7.jpg" class="img-responsive" alt=""/>
-                </div>
-                <div class="right-grid">
-                    <h4><a href="#">Duis autem vel eum iriure dolor in hendrerit</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat</p>
-                </div>
-                <div class="but">
-                    <a class="arrow" href="#"> </a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
+            <?php } ?>
         <div class="clearfix"></div>
     </div>
     <div class="content_bottom">
         <div class="col-md-3 span_1">
             <ul class="spinner">
                 <i class="box_icon"> </i>
-                <li class="spinner_head"><h3>mazim pla</h3></li>
+                <li class="spinner_head"><h3>Our Shop</h3></li>
                 <div class="clearfix"> </div>
             </ul>
-            <img src="assets/images/t8.jpg" class="img-responsive" alt=""/>
+            <img src="assets/images/b1.jpg" class="img-responsive" alt=""/>
         </div>
         <div class="col-md-3 span_1">
             <ul class="spinner">
@@ -308,7 +238,7 @@
         <div class="col-md-3 span_1">
             <ul class="spinner">
                 <i class="mail"> </i>
-                <li class="spinner_head"><h3>Contact Us</h3></li>
+                <li class="spinner_head"><h3>Follow Us</h3></li>
                 <div class="clearfix"> </div>
             </ul>
             <ul class="social">

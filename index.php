@@ -8,6 +8,7 @@
     Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <link href="assets/css/flexslider.css" rel='stylesheet' type='text/css'/>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <!-- Custom Theme files -->
         <link href="assets/css/style.css" rel='stylesheet' type='text/css' />
@@ -55,13 +56,17 @@
                 {
                     include './pages/blog-content.php';
                 }
-                if ($pages == 'blog-details-content')
-                {
-                    include './pages/blog-details-content.php';
-                }
                 if ($pages == 'contact-content')
                 {
                     include './pages/contact-content.php';
+                }
+                if ($pages == 'product-details-content')
+                {
+                    include './pages/product-details-content.php';
+                }
+                if ($pages == 'blog-details-content')
+                {
+                    include './pages/blog-details-content.php';
                 }
             }
             else
@@ -72,6 +77,22 @@
         ?>
 
         <?php include './includes/footer.php'; ?>
+
+
+        <script defer src="assets/js/jquery.flexslider.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                SyntaxHighlighter.all();
+            });
+            $(window).load(function(){
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    start: function(slider){
+                        $('body').removeClass('loading');
+                    }
+                });
+            });
+        </script
 
     </body>
     </html>

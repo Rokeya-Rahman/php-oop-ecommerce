@@ -4,7 +4,7 @@
 
     use App\classes\Application;
 
-    $blogDetailsId      =   $_GET['blog_id'];
+    $blogDetailsId      =   $_GET['blog'];
     $application        =   new Application();
     $blog               =   $application->selectBlogIdInformation($blogDetailsId);
     $blogDetailsIdInfo  =   mysqli_fetch_assoc($blog);

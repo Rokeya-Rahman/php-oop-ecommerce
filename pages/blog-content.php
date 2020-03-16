@@ -15,8 +15,8 @@
         <div class="blog-top">
             <?php foreach ($blogs as $blog) { ?>
                 <div class="col-md-6 grid_3">
-                    <h3><a href="blog_single.html"><?php print $blog['blog_name']; ?></a></h3>
-                    <a href="blog_single.html"><img src="admin/<?php print $blog['blog_image']; ?>" class="img-responsive" alt="<?php print $blog['blog_name']; ?>"/></a>
+                    <h3><?php print $blog['blog_name']; ?></a></h3>
+                    <img src="admin/<?php print $blog['blog_image']; ?>" class="img-responsive" alt="<?php print $blog['blog_name']; ?>"/>
                     <div class="blog-poast-info">
                         <ul>
                             <li><i class="admin"></i><a class="admin" href="#">GIFTY</a></li>
@@ -25,7 +25,7 @@
                         </ul>
                     </div>
                     <p><?php print $blog['blog_short_description'] ?></p>
-                    <div class="button"><a href="blog-details.php?blog_title=<?php print str_replace(' ', '-', $blog['blog_name']); ?>&blog_tag=<?php print str_replace(' ', '-', $blog['blog_tag']); ?>&blog_id=<?php print $blog['blog_id']; ?>">Read More</a></div>
+                    <div class="button"><a href="blog-details.php?blog_title=<?php print str_replace(' ', '-', $blog['blog_name']); ?>&blog_tag=<?php print str_replace(' ', '-', $blog['blog_tag']); ?>&blog=<?php print $blog['blog_id']; ?>">Read More</a></div>
                 </div>
             <?php } ?>
         </div>
