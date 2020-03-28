@@ -1,7 +1,5 @@
 <?php
 
-    require_once 'vendor/autoload.php';
-
     use App\classes\Blog;
 
     $blog = new Blog();

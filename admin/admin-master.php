@@ -138,6 +138,14 @@
                             {
                                 include './pages/edit-blog-content.php';
                             }
+                            if ($pages == 'manage-order-content')
+                            {
+                                include './pages/manage-order-content.php';
+                            }
+                            if ($pages == 'view-order-details-content')
+                            {
+                                include './pages/view-order-details-content.php';
+                            }
                         }
                         else
                         {

@@ -1,7 +1,5 @@
 <?php
 
-    require_once 'vendor/autoload.php';
-
     use App\classes\Application;
 
     $categoryProductId  =   $_GET['category'];

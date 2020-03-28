@@ -1,9 +1,8 @@
 <?php
 
-    require_once 'vendor/autoload.php';
     use App\classes\Product;
 
-    $editProductId  =   $_GET['product_id'];
+    $editProductId  =   $_GET['product_edit'];
     $product        =   new Product();
     $query          =   $product->getProductInfoById($editProductId);
     $productIdInfo  =   mysqli_fetch_assoc($query);

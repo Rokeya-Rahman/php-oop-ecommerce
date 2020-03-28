@@ -1,6 +1,5 @@
 <?php
 
-    require_once 'vendor/autoload.php';
     use App\classes\Category;
 
     date_default_timezone_set('Asia/Dhaka');

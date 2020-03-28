@@ -50,16 +50,30 @@ class Blog
     {
         $link   =   $this->__construct();
         $sql    =   "SELECT * FROM blogs WHERE blog_deletion_status = 0";
-        $query  =   mysqli_query($link, $sql);
-        return $query;
+        if (mysqli_query($link, $sql))
+        {
+            $query =    mysqli_query($link, $sql);
+            return $query;
+        }
+        else
+        {
+            die('Query Problem'.mysqli_error($link));
+        }
     }
 
     public function getBlogInfoById($editBlogId)
     {
         $link   =   $this->__construct();
         $sql    =   "SELECT * FROM blogs WHERE blog_id = '$editBlogId' ";
-        $query  =   mysqli_query($link, $sql);
-        return $query;
+        if (mysqli_query($link, $sql))
+        {
+            $query =    mysqli_query($link, $sql);
+            return $query;
+        }
+        else
+        {
+            die('Query Problem'.mysqli_error($link));
+        }
     }
 
     public function updateBlog()

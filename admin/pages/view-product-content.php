@@ -1,10 +1,8 @@
 <?php
 //
-//    require_once 'vendor/autoload.php';
-//
 //    use App\classes\Product;
 //
-//    $productViewId = $_GET['product_id'];
+//    $productViewId = $_GET['product_view'];
 //    $product = new Product();
 //    $value = $product->viewProductInfoById($productViewId);
 //    $productIdInfo = mysqli_fetch_assoc($value);

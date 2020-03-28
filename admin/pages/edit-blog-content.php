@@ -1,6 +1,5 @@
 <?php
 
-    require_once 'vendor/autoload.php';
     use App\classes\Blog;
 
     $editBlogId =   $_GET['blog_id'];

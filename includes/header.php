@@ -1,10 +1,29 @@
+<?php
+
+    use App\classes\Application;
+    $application = new Application();
+
+    if (isset($_POST['search']))
+    {
+        $query = $application->searchProductInfoBySearchText();
+    }
+
+?>
+
+
+
 <div class="header_top">
     <div class="container">
         <div class="header_top-box">
-            <div class="cssmenu">
+            <div class="cssmenu" style="color:white;">
                 <ul>
-                    <li><a href="login.html">Log In</a></li>
-                    <li><a href="register.html">Sign Up</a></li>
+                    <?php if (isset($_SESSION['customer_id'])) { ?>
+                        <?php print $_SESSION['customer_name']; ?>
+                        <li><a href="?customer=logout">Log Out</a></li>
+                    <?php } else { ?>
+                        <li><a href="customer-login.php">Log In</a></li>
+                        <li><a href="customer-signup.php">Sign Up</a></li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -21,17 +40,20 @@
                 <div class="clearfix"> </div>
             </div>
             <div class="header_bottom_right">
-                <div class="search">
-                    <input type="text" value="Your email address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your email address';}">
-                    <input type="submit" value="">
-                </div>
+
+                <form action="" method="post">
+                    <div class="search">
+                        <input type="text" name="search_text">
+                        <input type="submit" name="search" value="">
+                    </div>
+                </form>
+
                 <ul class="bag">
-                    <a href="#"><i class="bag_left"> </i></a>
-                    <a href="#"><li class="bag_right"><p>205.00 $</p> </li></a>
-                    <div class="clearfix"> </div>
+                    <a href="cart.php"><i class="bag_left"></i></a>
+                    <div class="clearfix"></div>
                 </ul>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>

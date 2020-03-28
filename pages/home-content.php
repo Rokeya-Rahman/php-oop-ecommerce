@@ -1,7 +1,5 @@
 <?php
 
-    require_once 'vendor/autoload.php';
-
     use App\classes\Application;
 
     $application = new Application();
@@ -87,18 +85,16 @@
             <?php foreach ($newProducts as $newProduct) { ?>
                 <div class="col-md-3 span_6" style="margin-bottom: 30px;">
                     <div class="box_inner">
-<!--                        <img src="assets/images/p1.jpg" class="img-responsive" alt=""/>-->
                         <img src="admin/<?php print $newProduct['product_image']; ?>" class="img-responsive" alt=""/>
                         <div class="desc">
                             <h3><?php print $newProduct['product_name']; ?></h3>
                             <h4>&#2547; <?php print $newProduct['product_price']; ?></h4>
                             <h5>Product Code : <?php print $newProduct['product_code']; ?></h5>
                             <ul class="list2">
-                                <li class="list2_left"><span class="m_1"><a href="#" class="link">Add to Cart</a></span></li>
-                                <li class="list2_right"><span class="m_2"><a href="product.php?product_name=<?php print str_replace(' ', '-', $newProduct['product_name']); ?>&product=<?php print $newProduct['product_id']; ?>" class="link1">See More</a></span></li>
+                                <li class="text-center" style="margin-bottom: 10px;"><span class="m_2"><a href="product.php?product_name=<?php print str_replace(' ', '-', $newProduct['product_name']); ?>&product=<?php print $newProduct['product_id']; ?>" class="link1">See More</a></span></li>
                                 <div class="clearfix"> </div>
                             </ul>
-                            <div class="heart"> </div>
+                            <div class="heart"></div>
                         </div>
                     </div>
                 </div>
@@ -111,12 +107,11 @@
     <div class="container">
         <ul class="promote">
             <i class="promote_icon"> </i>
-            <li class="promote_head"><h3>Promotion</h3></li>
+            <li class="promote_head"><h3>Product Zone</h3></li>
         </ul>
         <ul id="flexiselDemo3">
             <?php foreach ($allProducts as $allProduct) { ?>
                 <li>
-<!--                    <img src="assets/images/n1.jpg"  class="img-responsive" />-->
                     <img src="admin/<?php print $allProduct['product_image']; ?>" class="img-responsive" alt=""/>
                     <div class="grid-flex">
                         <h4><?php print $allProduct['product_name']; ?></h4>
@@ -159,42 +154,6 @@
 </div>
 <div class="container">
     <div class="content_middle_bottom">
-<!--        <div class="col-md-4">-->
-<!--            <ul class="spinner">-->
-<!--                <i class="spinner_icon"> </i>-->
-<!--                <li class="spinner_head"><h3>But I must explain</h3></li>-->
-<!--                <div class="clearfix"> </div>-->
-<!--            </ul>-->
-<!--            <div class="timer_box">-->
-<!--                <div class="thumb"> </div>-->
-<!--                <div class="timer_grid">-->
-<!--                    <ul id="countdown">-->
-<!--                    </ul>-->
-<!--                    <ul class="navigation">-->
-<!--                        <li>-->
-<!--                            <p class="timeRefDays">DAYS</p>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <p class="timeRefHours">HOURS</p>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <p class="timeRefMinutes">MINUTES</p>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <p class="timeRefSeconds">SECONDS</p>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--                <div class="thumb_desc">-->
-<!--                    <h3> totam rem aperiam</h3>-->
-<!--                    <div class="price">-->
-<!--                        <span class="reducedfrom">$140.00</span>-->
-<!--                        <span class="actual">$120.00</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <a href="#"><div class="m_3 deal"><div class="link3">Buy this deal</div></div></a>-->
-<!--            </div>-->
-<!--        </div>-->
         <div class="col-md-12">
             <ul class="spinner">
                 <i class="paperclip"></i>

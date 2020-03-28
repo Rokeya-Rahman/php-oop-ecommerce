@@ -1,6 +1,5 @@
 <?php
 
-    require_once 'vendor/autoload.php';
     use App\classes\Category;
 
     $categoryEditId =   $_GET['category_id'];

@@ -1,8 +1,6 @@
 <?php
 
-    require_once 'vendor/autoload.php';
     use App\classes\Product;
-    use App\classes\SubImage;
 
     $product = new Product();
     $categories = $product->selectCategoryInfo();

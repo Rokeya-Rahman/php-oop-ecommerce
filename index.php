@@ -1,3 +1,20 @@
+<?php
+
+    ob_start();
+    session_start();
+    require_once 'vendor/autoload.php';
+    use App\classes\Application;
+    $application = new Application();
+
+    if (isset($_GET['customer']))
+    {
+        $application = new Application();
+        $application->customerLogout();
+    }
+?>
+
+
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -56,10 +73,6 @@
                 {
                     include './pages/blog-content.php';
                 }
-                if ($pages == 'contact-content')
-                {
-                    include './pages/contact-content.php';
-                }
                 if ($pages == 'product-details-content')
                 {
                     include './pages/product-details-content.php';
@@ -67,6 +80,42 @@
                 if ($pages == 'blog-details-content')
                 {
                     include './pages/blog-details-content.php';
+                }
+                if ($pages == 'contact-content')
+                {
+                    include './pages/contact-content.php';
+                }
+                if ($pages == 'cart-content')
+                {
+                    include './pages/cart-content.php';
+                }
+                if ($pages == 'checkout-content')
+                {
+                    include './pages/checkout-content.php';
+                }
+                if ($pages == 'customer-signup-content')
+                {
+                    include './pages/customer-signup-content.php';
+                }
+                if ($pages == 'customer-login-content')
+                {
+                    include './pages/customer-login-content.php';
+                }
+                if ($pages == 'confirmed-registration-content')
+                {
+                    include './pages/confirmed-registration-content.php';
+                }
+                if ($pages == 'shipping-content')
+                {
+                    include './pages/shipping-content.php';
+                }
+                if ($pages == 'payment-content')
+                {
+                    include './pages/payment-content.php';
+                }
+                if ($pages == 'customer-home-content')
+                {
+                    include './pages/customer-home-content.php';
                 }
             }
             else

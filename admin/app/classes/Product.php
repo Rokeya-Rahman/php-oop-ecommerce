@@ -132,25 +132,47 @@ class Product extends Category
     public function selectProductInfo()
     {
         $link   =   $this->__construct();
-        $sql    =   "SELECT * FROM products LEFT JOIN categories ON products.product_category_id = categories.category_id WHERE product_deletion_status = 0";
-        $query  =   mysqli_query($link, $sql);
-        return $query;
+        //$sql    =   "SELECT * FROM products LEFT JOIN categories ON products.product_category_id = categories.category_id WHERE product_deletion_status = 0";
+        $sql    =   "SELECT products.*, categories.category_name FROM products, categories WHERE products.product_category_id = categories.category_id AND product_deletion_status = 0";
+        if (mysqli_query($link, $sql))
+        {
+            $query =    mysqli_query($link, $sql);
+            return $query;
+        }
+        else
+        {
+            die('Query Problem'.mysqli_error($link));
+        }
     }
 
-    //public function viewProductInfoById($productViewId)
-    //{
-        //$link   =   $this->__construct();
-        //$sql    =   "SELECT * FROM products LEFT JOIN categories ON products.category_id = categories.category_id WHERE product_id = '$productViewId' ";
-        //$query  =   mysqli_query($link, $sql);
-        //return $query;
-    //}
+    /*public function viewProductInfoById($productViewId)
+    {
+        $link   =   $this->__construct();
+        $sql    =   "SELECT * FROM products LEFT JOIN categories ON products.product_category_id = categories.category_id WHERE product_id = '$productViewId' ";
+        if (mysqli_query($link, $sql))
+        {
+            $query =    mysqli_query($link, $sql);
+            return $query;
+        }
+        else
+        {
+            die('Query Problem'.mysqli_error($link));
+        }
+    }*/
 
     public function getProductInfoById($editProductId)
     {
         $link   =   $this->__construct();
         $sql    =   "SELECT * FROM products WHERE product_id = '$editProductId' ";
-        $query  =   mysqli_query($link, $sql);
-        return $query;
+        if (mysqli_query($link, $sql))
+        {
+            $query =    mysqli_query($link, $sql);
+            return $query;
+        }
+        else
+        {
+            die('Query Problem'.mysqli_error($link));
+        }
     }
 
     public function updateProduct()

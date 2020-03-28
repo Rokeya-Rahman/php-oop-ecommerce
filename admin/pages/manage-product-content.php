@@ -1,7 +1,5 @@
 <?php
 
-    require_once 'vendor/autoload.php';
-
     use App\classes\Product;
 
     $product = new Product();
@@ -115,10 +113,10 @@
                                 ?>
                             </td>
                             <td class="center">
-                                <!--<a class="btn btn-warning" href="view-product.php?view=view_product&product_id=--><?php //print $product['product_id']; ?><!--">-->
-                                <!--<i class="halflings-icon white zoom-in"></i>-->
-                                <!--</a>-->
-                                <a class="btn btn-info" href="edit-product.php?product_id=<?php print $product['product_id']; ?>">
+<!--                                <a class="btn btn-warning" href="view-product.php?product_view=--><?php //print $product['product_id']; ?><!--">-->
+<!--                                <i class="halflings-icon white zoom-in"></i>-->
+<!--                                </a>-->
+                                <a class="btn btn-info" href="edit-product.php?product_edit=<?php print $product['product_id']; ?>">
                                     <i class="halflings-icon white edit"></i>
                                 </a>
                                 <a class="btn btn-danger" href="?p_status=delete&product_id=<?php print $product['product_id']; ?>" onclick="return confirm('Are you sure to delete this product information !!!')">

@@ -40,8 +40,15 @@ class Category
         $link  =    $this->__construct();
         //$sql   =    "SELECT * FROM categories";
         $sql   =    "SELECT * FROM categories WHERE category_deletion_status = 0";
-        $query =    mysqli_query($link, $sql);
-        return $query;
+        if (mysqli_query($link, $sql))
+        {
+            $query =    mysqli_query($link, $sql);
+            return $query;
+        }
+        else
+        {
+            die('Query Problem'.mysqli_error($link));
+        }
     }
 
 
@@ -49,8 +56,15 @@ class Category
     {
         $link   =   $this->__construct();
         $sql    =   "SELECT * FROM categories WHERE category_id = '$categoryEditId' ";
-        $query  =   mysqli_query($link, $sql);
-        return $query;
+        if (mysqli_query($link, $sql))
+        {
+            $query =    mysqli_query($link, $sql);
+            return $query;
+        }
+        else
+        {
+            die('Query Problem'.mysqli_error($link));
+        }
     }
 
 
@@ -67,7 +81,7 @@ class Category
         if (mysqli_query($link, $sql))
         {
             $_SESSION['message'] = "Category information update successfully";
-            header('Location: manage-men-fashion.php');
+            header('Location: manage-category.php');
 
         }
         else
