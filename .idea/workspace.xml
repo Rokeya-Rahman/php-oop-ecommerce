@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ba4014d-354f-4044-ab0b-0ea479a8e5f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/app/classes/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/classes/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/manage-order-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/manage-order-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/view-order-details-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/view-order-details-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shipping-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shipping-content.php" afterDir="false" />
-    </list>
+    <list default="true" id="0ba4014d-354f-4044-ab0b-0ea479a8e5f4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,26 +26,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/app/classes/Order.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/pages/view-order-details-content.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="128" column="84" selection-start-line="128" selection-start-column="84" selection-end-line="128" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -346,12 +320,12 @@
       <workItem from="1585364691379" duration="2482000" />
       <workItem from="1585399096120" duration="931000" />
       <workItem from="1585447014696" duration="8518000" />
-      <workItem from="1585473704666" duration="968000" />
+      <workItem from="1585473704666" duration="1172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="343321000" />
+    <option name="totallyTimeSpent" value="343525000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -364,7 +338,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16414523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
