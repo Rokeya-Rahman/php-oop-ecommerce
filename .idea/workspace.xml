@@ -2,58 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ba4014d-354f-4044-ab0b-0ea479a8e5f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/app/classes/Order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/manage-order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/pages/manage-order-content.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/pages/view-order-details-content.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/view-order-details.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/customer-home-content.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/payment-content.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin-master.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin-master.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/app/classes/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/classes/Blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/app/classes/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/classes/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/app/classes/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/classes/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-1-15843314067466726625e6efa8ed33d2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-10-158433155321186276145e6efb2133058.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-11-15843315534729708545e6efb2133428.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-12-158433155313686911855e6efb21337f9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-13-158433159321122596945e6efb49a6e49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-14-15843315933179695195e6efb49a721a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-15-1584331593326280955e6efb49a75ea.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-2-15843314069373493605e6efa8eda272.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-3-158433140614279591755e6efa8edaa13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-4-158433146916000896655e6efacdd9ea2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-5-158433146910301366245e6efacdda643.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-6-158433146913127625225e6efacddaa13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-7-1584331514228756575e6efafaa168c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-8-1584331514495749165e6efafaa1a5d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/product-images/sponsore-9-158433151416220760485e6efafaa1e2d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/add-blog-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/add-blog-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/add-category-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/add-category-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/add-product-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/add-product-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/edit-blog-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/edit-blog-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/edit-category-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/edit-category-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/edit-product-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/edit-product-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/manage-blog-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/manage-blog-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/manage-category-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/manage-category-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/manage-product-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/manage-product-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pages/view-product-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/view-product-content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/app/classes/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/app/classes/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pages/manage-order-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/manage-order-content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/pages/view-order-details-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pages/view-order-details-content.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/classes/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/blog-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/blog-details-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog-details-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/category-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/category-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/product-details-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/product-details-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/special-content.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/special.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shipping-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shipping-content.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,10 +35,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/pages/manage-order-content.php">
+        <entry file="file://$PROJECT_DIR$/admin/app/classes/Order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="57" column="43" lean-forward="true" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
+            <state relative-caret-position="346">
+              <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -92,17 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/pages/view-order-details-content.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="51" column="64" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/app/classes/Order.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="35" column="118" selection-start-line="35" selection-start-column="118" selection-end-line="35" selection-end-column="118" />
+            <state relative-caret-position="372">
+              <caret line="128" column="84" selection-start-line="128" selection-start-column="84" selection-end-line="128" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -159,9 +104,7 @@
         <option value="$PROJECT_DIR$/shipping.php" />
         <option value="$PROJECT_DIR$/includes/header.php" />
         <option value="$PROJECT_DIR$/pages/confirmed-registration-content.php" />
-        <option value="$PROJECT_DIR$/pages/customer-signup-content.php" />
         <option value="$PROJECT_DIR$/payment.php" />
-        <option value="$PROJECT_DIR$/pages/shipping-content.php" />
         <option value="$PROJECT_DIR$/pages/customer-login-content.php" />
         <option value="$PROJECT_DIR$/pages/payment-content.php" />
         <option value="$PROJECT_DIR$/pages/cart-content.php" />
@@ -183,13 +126,15 @@
         <option value="$PROJECT_DIR$/admin/pages/manage-product-content.php" />
         <option value="$PROJECT_DIR$/admin/app/classes/Category.php" />
         <option value="$PROJECT_DIR$/admin/app/classes/Blog.php" />
-        <option value="$PROJECT_DIR$/app/classes/Application.php" />
         <option value="$PROJECT_DIR$/admin/view-order.php" />
         <option value="$PROJECT_DIR$/admin/view-order-details.php" />
         <option value="$PROJECT_DIR$/admin/admin-master.php" />
-        <option value="$PROJECT_DIR$/admin/pages/manage-order-content.php" />
         <option value="$PROJECT_DIR$/admin/app/classes/Product.php" />
+        <option value="$PROJECT_DIR$/pages/customer-signup-content.php" />
+        <option value="$PROJECT_DIR$/app/classes/Application.php" />
+        <option value="$PROJECT_DIR$/pages/shipping-content.php" />
         <option value="$PROJECT_DIR$/admin/app/classes/Order.php" />
+        <option value="$PROJECT_DIR$/admin/pages/manage-order-content.php" />
         <option value="$PROJECT_DIR$/admin/pages/view-order-details-content.php" />
       </list>
     </option>
@@ -215,41 +160,6 @@
             <path>
               <item name="php-ecommerce" type="b2602c69:ProjectViewProjectNode" />
               <item name="php-ecommerce" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="php-ecommerce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="php-ecommerce" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="php-ecommerce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="php-ecommerce" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="php-ecommerce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="php-ecommerce" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="php-ecommerce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="php-ecommerce" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="php-ecommerce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="php-ecommerce" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="php-ecommerce" type="b2602c69:ProjectViewProjectNode" />
-              <item name="php-ecommerce" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -434,11 +344,14 @@
       <workItem from="1585305150046" duration="2907000" />
       <workItem from="1585361018544" duration="2915000" />
       <workItem from="1585364691379" duration="2482000" />
+      <workItem from="1585399096120" duration="931000" />
+      <workItem from="1585447014696" duration="8518000" />
+      <workItem from="1585473704666" duration="968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332904000" />
+    <option name="totallyTimeSpent" value="343321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,8 +364,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23600605" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16414523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -474,7 +388,7 @@
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22844176" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16187595" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -604,13 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shipping.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/confirmed-registration.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -660,13 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/customer-signup-content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="91" selection-start-line="91" selection-end-line="124" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/customer-login-content.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -678,13 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="113" column="52" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/shipping-content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -807,31 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/classes/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="961">
-          <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/classes/Blog.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-484">
           <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/classes/Application.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3188">
-          <caret line="121" column="9" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/pages/manage-category-content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="80" column="96" lean-forward="true" selection-start-line="78" selection-start-column="24" selection-end-line="80" selection-end-column="96" />
         </state>
       </provider>
     </entry>
@@ -864,20 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/pages/manage-order-content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="57" column="43" lean-forward="true" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/app/classes/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="35" column="118" selection-start-line="35" selection-start-column="118" selection-end-line="35" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/pages/view-product-content.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -895,10 +753,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/shipping.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/customer-signup-content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="149" column="50" lean-forward="true" selection-start-line="149" selection-start-column="50" selection-end-line="149" selection-end-column="50" />
+          <caret line="163" column="40" lean-forward="true" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
+          <caret line="172" column="51" selection-start-line="172" selection-start-column="51" selection-end-line="172" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/shipping-content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="202" column="58" selection-start-line="202" selection-start-column="58" selection-end-line="202" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/classes/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="110" column="9" lean-forward="true" selection-start-line="99" selection-start-column="8" selection-end-line="110" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pages/manage-category-content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-296">
+          <caret line="49" column="10" lean-forward="true" selection-start-line="40" selection-end-line="49" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pages/manage-order-content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="90" column="36" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="90" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="318" column="33" selection-start-line="318" selection-start-column="33" selection-end-line="318" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/app/classes/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/pages/view-order-details-content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="51" column="64" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
+        <state relative-caret-position="372">
+          <caret line="128" column="84" selection-start-line="128" selection-start-column="84" selection-end-line="128" selection-end-column="84" />
         </state>
       </provider>
     </entry>

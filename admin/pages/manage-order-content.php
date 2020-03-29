@@ -10,6 +10,13 @@
         print_r($order);
     }
     exit();*/
+    $i = 1;
+
+    if (isset($_GET['o_status']))
+    {
+        $deleteOrderId = $_GET['order_id'];
+        $order->deleteOrder($deleteOrderId);
+    }
 
 ?>
 
@@ -23,6 +30,17 @@
     </li>
     <li><a href="#">Manage Order</a></li>
 </ul>
+
+<?php if (isset($_GET['message'])) { ?>
+
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>
+            <?php print $_GET['message']; ?>
+        </strong>
+    </div>
+
+<?php } ?>
 
 <div class="row-fluid sortable">
     <div class="box span12">
@@ -47,7 +65,7 @@
 
                 <?php while ($order = mysqli_fetch_assoc($orders)) { ?>
                     <tr>
-                        <th><?php print $order['order_id']; ?></th>
+                        <th><?php print $i++; ?></th>
                         <th><?php print htmlentities($order['first_name'].' '.$order['last_name']); ?></th>
                         <th><?php print htmlentities($order['order_total']); ?></th>
                         <th><?php print $order['order_date']; ?></th>
@@ -59,18 +77,18 @@
                             <a class="btn btn-warning" href="view-order-details.php?order_id=<?php print $order['order_id']; ?>" title="View Order">
                                 <i class="halflings-icon white zoom-in"></i>
                             </a>
-                            <a class="btn btn-primary" href="" title="View Invoice">
-                                <i class="halflings-icon white zoom-out"></i>
-                            </a>
-                            <a class="btn btn-success" href="" title="Download Invoice">
-                                <i class="halflings-icon white download"></i>
-                            </a>
-                            <a class="btn btn-info" href="">
-                                <i class="halflings-icon white edit"></i>
-                            </a>
-                            <a class="btn btn-danger" href="">
-                                <i class="halflings-icon white trash"></i>
-                            </a>
+<!--                            <a class="btn btn-primary" href="" title="View Invoice">-->
+<!--                                <i class="halflings-icon white zoom-out"></i>-->
+<!--                            </a>-->
+<!--                            <a class="btn btn-success" href="" title="Download Invoice">-->
+<!--                                <i class="halflings-icon white download"></i>-->
+<!--                            </a>-->
+<!--                            <a class="btn btn-info" href="">-->
+<!--                                <i class="halflings-icon white edit"></i>-->
+<!--                            </a>-->
+<!--                            <a class="btn btn-danger" href="?o_status=delete&order_id=--><?php //print $order['order_id']; ?><!--" onclick="return confirm('Are you sure to delete this category information !!!')">-->
+<!--                                <i class="halflings-icon white trash"></i>-->
+<!--                            </a>-->
                         </td>
                     </tr>
                 <?php } ?>

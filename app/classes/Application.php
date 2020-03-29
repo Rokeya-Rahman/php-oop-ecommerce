@@ -271,16 +271,16 @@ class Application
 
     public function saveShippingInfo()
     {
-        $fullName       =   $_POST['full_name'];
-        $emailAddress   =   $_POST['email_address'];
-        $address        =   $_POST['address'];
-        $phoneNumber    =   $_POST['phone_number'];
-        $city           =   $_POST['city'];
-        $country        =   $_POST['country'];
-        $zipCode        =   $_POST['zip_code'];
+        $fullName       =   $_POST['shipping_full_name'];
+        $emailAddress   =   $_POST['shipping_email_address'];
+        $address        =   $_POST['shipping_address'];
+        $phoneNumber    =   $_POST['shipping_phone_number'];
+        $city           =   $_POST['shipping_city'];
+        $country        =   $_POST['shipping_country'];
+        $zipCode        =   $_POST['shipping_zip_code'];
 
         $link   =   $this->__construct();
-        $sql    =   "INSERT INTO shippings(full_name, email_address, address, phone_number, city, country, zip_code) VALUES ('$fullName', '$emailAddress', '$address', '$phoneNumber', '$city', '$country', '$zipCode')";
+        $sql    =   "INSERT INTO shippings(shipping_full_name, shipping_email_address, shipping_address, shipping_phone_number, shipping_city, shipping_country, shipping_zip_code) VALUES ('$fullName', '$emailAddress', '$address', '$phoneNumber', '$city', '$country', '$zipCode')";
         if (mysqli_query($link, $sql))
         {
             $shippingId = mysqli_insert_id($link);

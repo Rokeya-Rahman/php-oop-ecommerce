@@ -7,13 +7,13 @@
 
     if (isset($_POST['btn']))
     {
-        $fullName       =   $_POST['full_name'];
-        $emailAddress   =   $_POST['email_address'];
-        $address        =   $_POST['address'];
-        $phoneNumber    =   $_POST['phone_number'];
-        $city           =   $_POST['city'];
-        $country        =   $_POST['country'];
-        $zipCode        =   $_POST['zip_code'];
+        $fullName       =   $_POST['shipping_full_name'];
+        $emailAddress   =   $_POST['shipping_email_address'];
+        $address        =   $_POST['shipping_address'];
+        $phoneNumber    =   $_POST['shipping_phone_number'];
+        $city           =   $_POST['shipping_city'];
+        $country        =   $_POST['shipping_country'];
+        $zipCode        =   $_POST['shipping_zip_code'];
 
         if ($fullName == '')
         {
@@ -117,21 +117,21 @@
                     <h3 style="margin-bottom: 15px;">Welcome <?php print $_SESSION['customer_name']; ?>. You have given us product shipping information to complete your order.</h3>
                     <div>
                         <span>Full Name<label>*</label></span>
-                        <input type="text" name="full_name" value="<?php if (isset($fullName)) { print $fullName; } ?>">
+                        <input type="text" name="shipping_full_name" value="<?php if (isset($fullName)) { print $fullName; } ?>">
                         <br>
                         <br>
                         <span style="font-weight: bold; color: red;"><?php if (isset($fullNameError)) { print $fullNameError; } ?></span>
                     </div>
                     <div>
                         <span>Email Address<label>*</label></span>
-                        <input type="email" name="email_address" value="<?php if (isset($emailAddress)) { print $emailAddress; } ?>" placeholder="Please use a unique email address">
+                        <input type="email" name="shipping_email_address" value="<?php if (isset($emailAddress)) { print $emailAddress; } ?>" placeholder="Please use a unique email address">
                         <br>
                         <br>
                         <span style="font-weight: bold; color: red;"><?php if (isset($emailAddressError)) { print $emailAddressError; } ?></span>
                     </div>
                     <div>
                         <span>Address<label>*</label></span>
-                        <textarea name="address" id="" cols="60"><?php if (isset($address)) { print $address; } ?></textarea>
+                        <textarea name="shipping_address" id="" cols="60"><?php if (isset($address)) { print $address; } ?></textarea>
                         <br>
                         <br>
                         <span style="font-weight: bold; color: red;"><?php if (isset($addressError)) { print $addressError; } ?></span>
@@ -140,21 +140,21 @@
                     <a class="news-letter" href="#"></a>
                     <div>
                         <span>Phone Number<label>*</label></span>
-                        <input type="number" name="phone_number" value="<?php if (isset($phoneNumber)) { print $phoneNumber; } ?>">
+                        <input type="number" name="shipping_phone_number" value="<?php if (isset($phoneNumber)) { print $phoneNumber; } ?>">
                         <br>
                         <br>
                         <span style="font-weight: bold; color: red;"><?php if (isset($phoneNumberError)) { print $phoneNumberError; } ?></span>
                     </div>
                     <div>
                         <span>City<label>*</label></span>
-                        <input type="text" name="city" value="<?php if (isset($city)) { print $city; } ?>">
+                        <input type="text" name="shipping_city" value="<?php if (isset($city)) { print $city; } ?>">
                         <br>
                         <br>
                         <span style="font-weight: bold; color: red;"><?php if (isset($cityError)) { print $cityError; } ?></span>
                     </div>
                     <div>
                         <span>Country<label>*</label></span>
-                        <select name="country">
+                        <select name="shipping_country">
                             <option value="">Select Your Country</option>
                             <?php if ($country == 'BD') { ?>
                                 <option value="BD" selected>Bangladesh</option>
@@ -200,7 +200,7 @@
                     </div>
                     <div>
                         <span>Zip Code<label>*</label></span>
-                        <input type="text" name="zip_code" value="<?php if (isset($zipCode)) { print $zipCode; } ?>">
+                        <input type="text" name="shipping_zip_code" value="<?php if (isset($zipCode)) { print $zipCode; } ?>">
                         <br>
                         <br>
                         <span style="font-weight: bold; color: red;"><?php if (isset($zipCodeError)) { print $zipCodeError; } ?></span>
